@@ -37,6 +37,8 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;b
 @media (hover:hover) and (prefers-reduced-motion:no-preference){body::after{animation:grain 0.9s steps(1) infinite}}
 @keyframes grain{0%{background-position:0 0}20%{background-position:-41px 23px}40%{background-position:57px -31px}60%{background-position:-13px -67px}80%{background-position:71px 47px}}
 body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
+[data-menu-btn]{display:none}
+@media (max-width:720px){[data-menu-btn]{display:inline-flex}[data-nav]{display:none!important}[data-nav][data-open]{display:flex!important;flex-direction:column;width:100%;gap:0!important;border-top:1.5px solid #2B1F4A}[data-nav][data-open] a{min-height:56px!important;font-size:18px!important;border-bottom:1px solid rgba(43,31,74,.35)}}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif; color: #2B1F4A; font-size: 18px; line-height: 1.55; position: relative; overflow-x: clip">
@@ -48,7 +50,8 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <section data-sec="" data-sky="#B3A4D8,#F4EA94" data-screen-label="Hero" style="min-height: 100vh; display: flex; flex-direction: column">
 <header style="width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
 <a href="#top" style="font-size: 26px; font-style: italic; letter-spacing: 0.04em; text-decoration: none; min-height: 44px; display: flex; align-items: center">putrika</a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px">
+<button type="button" data-menu-btn="" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" style="width: 48px; height: 48px; padding: 0; align-items: center; justify-content: center; background: none; border: 1.5px solid #2B1F4A; border-radius: 999px; color: #2B1F4A"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h16"></path><path d="M3 11h16"></path><path d="M3 16h16"></path></svg></button>
+<nav id="site-nav" data-nav="" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px">
 <a href="#music" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Music</a>
 <a href="#about" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">About</a>
 <a href="#shows" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Shows</a>
@@ -93,7 +96,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <iframe title="Wanita on Spotify" src="https://open.spotify.com/embed/album/3zmqS5ZIfS0sDePpXdvPIO?utm_source=generator&amp;theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border: 0; border-radius: 12px; display: block; margin-top: 12px; max-width: 540px"></iframe>
 <a href="https://putrika.bandcamp.com/" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #2B1F4A; box-sizing: border-box; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Merch on Bandcamp</a>
 </div>
-<ol data-reveal="" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1.5px solid #2B1F4A; align-self: start">
+<ol data-reveal="" data-tracks="" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1.5px solid #2B1F4A; align-self: start">
 <li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/slowly-1" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">01</span><span style="font-style: italic">Slowly</span></a></li>
 <li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/celestial-1" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">02</span><span style="font-style: italic">Celestial</span></a></li>
 <li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/clarity" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">03</span><span style="font-style: italic">Clarity</span></a></li>
@@ -266,6 +269,13 @@ class Component extends DCLogic {
         Object.assign(p, { x: m.x, y: m.y, vx: (Math.random() - 0.5) * 0.8, vy: 0.5 + Math.random() * 0.8, r: Math.random() * 360, vr: (Math.random() - 0.5) * 4, life: 1, ph: Math.random() * 6 });
       }
     };
+    const menuBtn = $('[data-menu-btn]'), nav = $('[data-nav]');
+    const setMenu = open => { if (!nav || !menuBtn) return; nav.toggleAttribute('data-open', open); menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+    const onMenu = () => setMenu(!nav.hasAttribute('data-open'));
+    const onNavClick = e => { if (e.target.closest('a')) setMenu(false); };
+    if (menuBtn && nav) { menuBtn.addEventListener('click', onMenu); nav.addEventListener('click', onNavClick); }
+    const trackLinks = fine ? [] : $$('[data-tracks] a');
+    let activeTrack = -1;
     const onLeave = () => { m.in = false; };
     const onDown = () => { m.down = true; };
     const onUp = () => { m.down = false; };
@@ -332,6 +342,16 @@ class Component extends DCLogic {
         const s = (now % 2000) / 2000;
         pulse.style.transform = 'scale(' + (1 + s * 1.4).toFixed(3) + ')';
         pulse.style.opacity = (1 - s).toFixed(3);
+      }
+
+      if (trackLinks.length) {
+        const line = vh * 0.45; let best = -1, bd = 1e9;
+        trackLinks.forEach((a, i) => { const r = a.getBoundingClientRect(); const d = Math.abs((r.top + r.bottom) / 2 - line); if (r.bottom > 0 && r.top < vh && d < bd) { bd = d; best = i; } });
+        if (bd > vh * 0.3) best = -1;
+        if (best !== activeTrack) {
+          activeTrack = best;
+          trackLinks.forEach((a, i) => { a.style.backgroundSize = i === best ? '100% 100%' : '0% 100%'; a.style.paddingLeft = i === best ? '28px' : '8px'; });
+        }
       }
 
       const wantCur = fine && this.props.flowerCursor !== false;
