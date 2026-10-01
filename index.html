@@ -170,7 +170,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <h2 style="margin: 0; font-size: clamp(56px, 8vw, 116px); font-weight: 400; font-style: italic; line-height: 0.95">get in touch</h2>
 </div>
 <div data-reveal="" style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
-<a href="mailto:bookings@putrika.net" style="font-size: clamp(22px, 2.6vw, 32px); color: #F4EA94; min-height: 44px; display: flex; align-items: center; overflow-wrap: anywhere">bookings@putrika.net</a>
+<a href="{{ bookMailto }}" style="font-size: clamp(22px, 2.6vw, 32px); color: #F4EA94; min-height: 44px; display: flex; align-items: center; overflow-wrap: anywhere">{{ bookEmail }}</a>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #F4EA94; color: #2B1F4A; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Download press kit [PDF]</a>
 <a href="https://www.instagram.com/putrikamusic/" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1.5px solid #F4EA94; box-sizing: border-box; color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Instagram</a>
@@ -411,7 +411,8 @@ class Component extends DCLogic {
     const all = Component.SHOWS;
     const upcoming = all.filter(s => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
     const past = all.filter(s => s.date < today).sort((a, b) => b.date.localeCompare(a.date));
-    return { rootRef: this.rootRef, upcoming, past, noUpcoming: upcoming.length === 0 };
+    const bookEmail = ['bookings', 'putrika.net'].join('@');
+    return { rootRef: this.rootRef, upcoming, past, noUpcoming: upcoming.length === 0, bookEmail, bookMailto: 'mailto:' + bookEmail };
   }
 }
 </script>
