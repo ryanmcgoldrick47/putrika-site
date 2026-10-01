@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
 <title>Putrika</title>
 <meta name="description" content="alt-soul electronica / from java island to dharawal country">
 <link rel="canonical" href="https://putrika.net/">
@@ -29,7 +30,7 @@
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <style>
-:root{color-scheme:light}
+:root{color-scheme:only light}
 html{scroll-behavior:smooth}
 body{margin:0;background:#B3A4D8}
 a{color:#2B1F4A}a:hover{color:#5A4696}
@@ -37,6 +38,9 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;b
 @media (hover:hover) and (prefers-reduced-motion:no-preference){body::after{animation:grain 0.9s steps(1) infinite}}
 @keyframes grain{0%{background-position:0 0}20%{background-position:-41px 23px}40%{background-position:57px -31px}60%{background-position:-13px -67px}80%{background-position:71px 47px}}
 body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
+[data-flag-letter]{color:#F4EA94;background:linear-gradient(180deg,#E70011 0 54%,#fff 54% 100%);-webkit-background-clip:text;background-clip:text}
+@media (prefers-reduced-motion:no-preference){[data-flag-letter]{animation:flagwave 11s ease-in-out infinite}}
+@keyframes flagwave{0%,48%{color:#F4EA94;transform:none}54%{color:transparent;transform:translateY(-3px) rotate(-4deg)}60%{color:transparent;transform:translateY(3px) rotate(3deg)}66%{color:transparent;transform:translateY(-3px) rotate(-3deg)}72%{color:transparent;transform:translateY(3px) rotate(3deg)}78%{color:transparent;transform:translateY(-2px) rotate(-2deg)}84%{color:transparent;transform:translateY(1px)}92%,100%{color:#F4EA94;transform:none}}
 [data-menu-btn]{display:none}
 @media (max-width:720px){[data-menu-btn]{display:inline-flex}[data-nav]{display:none!important}[data-nav][data-open]{display:flex!important;flex-direction:column;width:100%;gap:0!important;border-top:1.5px solid #2B1F4A}[data-nav][data-open] a{min-height:56px!important;font-size:18px!important;border-bottom:1px solid rgba(43,31,74,.35)}}
 </style>
@@ -48,8 +52,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <div style="position: relative; z-index: 1">
 
 <section data-sec="" data-sky="#B3A4D8,#F4EA94" data-screen-label="Hero" style="min-height: 100vh; display: flex; flex-direction: column">
-<header style="width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
-<a href="#top" style="font-size: 26px; font-style: italic; letter-spacing: 0.04em; text-decoration: none; min-height: 44px; display: flex; align-items: center">putrika</a>
+<header style="width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px 32px">
 <button type="button" data-menu-btn="" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" style="width: 48px; height: 48px; padding: 0; align-items: center; justify-content: center; background: none; border: 1.5px solid #2B1F4A; border-radius: 999px; color: #2B1F4A"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h16"></path><path d="M3 11h16"></path><path d="M3 16h16"></path></svg></button>
 <nav id="site-nav" data-nav="" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px">
 <a href="#music" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Music</a>
@@ -178,7 +181,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 </div>
 </div>
 <footer style="position: relative; max-width: 1320px; margin: 0 auto; padding: 28px 24px 40px; box-sizing: border-box; border-top: 1px solid rgba(244, 234, 148, 0.35); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 28px">
-<span style="font-size: 20px; font-style: italic">putrika</span>
+<span data-flag="" aria-label="putrika" style="font-size: 20px; font-style: italic; display: inline-flex"><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.00s">p</span><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.11s">u</span><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.22s">t</span><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.33s">r</span><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.44s">i</span><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.55s">k</span><span data-flag-letter="" aria-hidden="true" style="display: inline-block; animation-delay: 0.66s">a</span></span>
 <div style="display: flex; flex-wrap: wrap; gap: 4px 24px">
 <a href="https://open.spotify.com/artist/5awAtBuVQEV68Nvs1loiby" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Spotify</a>
 <a href="https://putrika.bandcamp.com" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Bandcamp</a>
@@ -186,6 +189,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <a href="https://www.instagram.com/putrikamusic/" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Instagram</a>
 <a href="https://www.facebook.com/putrikamusic" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Facebook</a>
 </div>
+<a href="https://ryanmcgoldrick.com" style="width: 100%; display: flex; justify-content: flex-end; align-items: center; min-height: 44px; color: #CFC3EE; font-size: 14px; letter-spacing: 0.08em; text-decoration: none">Website design</a>
 </footer>
 </section>
 
