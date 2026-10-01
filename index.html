@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
+<script src="seo.js" data-page="home"></script>
+<style>
+:root{color-scheme:light}
+html{scroll-behavior:smooth}
+body{margin:0;background:#B3A4D8}
+a{color:#2B1F4A}a:hover{color:#5A4696}
+body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;background:url(assets/grain.png) repeat;background-size:160px 160px}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){body::after{animation:grain 0.9s steps(1) infinite}}
+@keyframes grain{0%{background-position:0 0}20%{background-position:-41px 23px}40%{background-position:57px -31px}60%{background-position:-13px -67px}80%{background-position:71px 47px}}
+body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif; color: #2B1F4A; font-size: 18px; line-height: 1.55; position: relative; overflow-x: clip">
+
+<div data-sky="" aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; background: linear-gradient(180deg, #B3A4D8, #F4EA94); pointer-events: none"></div>
+
+<div style="position: relative; z-index: 1">
+
+<section data-sec="" data-sky="#B3A4D8,#F4EA94" data-screen-label="Hero" style="min-height: 100vh; display: flex; flex-direction: column">
+<header style="width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="#top" style="font-size: 26px; font-style: italic; letter-spacing: 0.04em; text-decoration: none; min-height: 44px; display: flex; align-items: center">putrika</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px">
+<a href="#music" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Music</a>
+<a href="#about" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">About</a>
+<a href="#shows" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Shows</a>
+<a href="#booking" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Booking</a>
+</nav>
+</header>
+<div id="top" style="flex: 1; width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px 24px 96px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 32px; position: relative; z-index: 2">
+<h1 aria-label="putrika" style="margin: 0; font-size: clamp(88px, 15vw, 236px); font-weight: 400; font-style: italic; line-height: 0.88; letter-spacing: -0.02em; display: flex; overflow: hidden; padding-bottom: 0.08em"><span data-letter="" aria-hidden="true" style="display: inline-block">p</span><span data-letter="" aria-hidden="true" style="display: inline-block">u</span><span data-letter="" aria-hidden="true" style="display: inline-block">t</span><span data-letter="" aria-hidden="true" style="display: inline-block">r</span><span data-letter="" aria-hidden="true" style="display: inline-block">i</span><span data-letter="" aria-hidden="true" style="display: inline-block">k</span><span data-letter="" aria-hidden="true" style="display: inline-block">a</span></h1>
+<p data-intro="" style="margin: 0; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; max-width: 22em">alt-soul electronica /<br>from java island to dharawal country</p>
+<div data-intro="" style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="#music" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border-radius: 999px; background: #2B1F4A; color: #F4EA94; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Listen to Wanita</a>
+<a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border-radius: 999px; border: 1.5px solid #2B1F4A; box-sizing: border-box; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease, background 0.3s ease" style-hover="transform: translateY(-3px); background: rgba(251, 248, 230, 0.5)">Bookings</a>
+</div>
+</div>
+<div style="perspective: 1200px; justify-self: center; width: 100%; max-width: 580px">
+<a href="#music" aria-label="Wanita: go to music" style="display: block">
+<img data-cover="" src="assets/wanita.jpg" alt="Wanita album cover: a flowering stem in yellow and lavender against a lavender to yellow sky" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; box-shadow: 0 40px 80px -36px rgba(43, 31, 74, 0.6); will-change: transform">
+</a>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="border-top: 1.5px solid #2B1F4A; border-bottom: 1.5px solid #2B1F4A; overflow: hidden; padding: 20px 0">
+<div data-marquee="" style="display: flex; width: max-content; align-items: center; gap: 40px; font-size: clamp(34px, 4vw, 52px); font-style: italic; line-height: 1.1; white-space: nowrap; will-change: transform">
+<span>Slowly</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Celestial</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Clarity</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Desert Bloom</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Lights Off</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Sunbird</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Be Here</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Tea and Honey</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Dusk Lull</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Malam</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Slowly</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Celestial</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Clarity</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Desert Bloom</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Lights Off</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Sunbird</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Be Here</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Tea and Honey</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Dusk Lull</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span><span>Malam</span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A4696"></span>
+</div>
+</div>
+
+<section id="music" data-sec="" data-sky="#F4EA94,#FBF8E6" data-screen-label="Music">
+<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 72px">
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 24px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A4696">New album</div>
+<h2 style="margin: 0; font-size: clamp(72px, 10vw, 148px); font-weight: 400; font-style: italic; line-height: 0.9">wanita</h2>
+<p style="margin: 0; font-size: 20px">10 track album. Released 26 September 2025.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px">
+<a href="https://open.spotify.com/album/3zmqS5ZIfS0sDePpXdvPIO" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #2B1F4A; color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Spotify</a>
+<a href="https://putrika.bandcamp.com/album/wanita" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #2B1F4A; color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Buy on Bandcamp</a>
+<a href="https://soundcloud.com/putrikamusic" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #2B1F4A; box-sizing: border-box; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">SoundCloud</a>
+<a href="https://www.abc.net.au/triplejunearthed/artist/putrika" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #2B1F4A; box-sizing: border-box; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">triple j Unearthed</a>
+</div>
+<iframe title="Wanita on Spotify" src="https://open.spotify.com/embed/album/3zmqS5ZIfS0sDePpXdvPIO?utm_source=generator&amp;theme=0" width="100%" height="352" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border: 0; border-radius: 12px; display: block; margin-top: 12px; max-width: 540px"></iframe>
+<a href="https://putrika.bandcamp.com/" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #2B1F4A; box-sizing: border-box; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Merch on Bandcamp</a>
+</div>
+<ol data-reveal="" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1.5px solid #2B1F4A; align-self: start">
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/slowly-1" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">01</span><span style="font-style: italic">Slowly</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/celestial-1" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">02</span><span style="font-style: italic">Celestial</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/clarity" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">03</span><span style="font-style: italic">Clarity</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/desert-bloom" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">04</span><span style="font-style: italic">Desert Bloom</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/lights-off" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">05</span><span style="font-style: italic">Lights Off</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/sunbird" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">06</span><span style="font-style: italic">Sunbird</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/be-here" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">07</span><span style="font-style: italic">Be Here</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/tea-and-honey-1" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">08</span><span style="font-style: italic">Tea and Honey</span></a></li>
+<li style="border-bottom: 1px solid rgba(43, 31, 74, 0.35)"><a href="https://soundcloud.com/putrikamusic/dusk-lull-1" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">09</span><span style="font-style: italic">Dusk Lull</span></a></li>
+<li style="border-bottom: 1.5px solid #2B1F4A"><a href="https://soundcloud.com/putrikamusic/malam" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, #B3A4D8, #F4EA94); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: #5A4696; width: 28px">10</span><span style="font-style: italic">Malam</span></a></li>
+</ol>
+</div>
+</section>
+
+<section id="about" data-sec="" data-sky="#FBF8E6,#F4EA94" data-screen-label="About">
+<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 80px">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A4696">About</div>
+<p data-bio="" style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.15; max-width: 18em; text-wrap: pretty"><span data-word="">Jakarta-born, </span><span data-word="">Dharawal </span><span data-word="">country-based </span><span data-word="" style="font-style: italic">singer, </span><span data-word="" style="font-style: italic">songwriter, </span><span data-word="">and </span><span data-word="" style="font-style: italic">electronic </span><span data-word="" style="font-style: italic">music </span><span data-word="" style="font-style: italic">producer.</span></p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
+<p data-reveal="" style="margin: 0; font-size: 18px; color: #2B1F4A; max-width: 34em; font-size: 20px; line-height: 1.6; text-wrap: pretty"><span style="font-style: italic">Putrika</span> (born Putri Karina) is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots.</p>
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 40px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A4696">Press</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<blockquote style="margin: 0; font-size: 28px; font-style: italic; line-height: 1.3; text-wrap: pretty">&ldquo;Putrika, this is pretty epic! Love the fusion of sounds and feelings&rdquo;</blockquote>
+<figcaption style="font-size: 16px">Anika Luna, triple j, on <span style="font-style: italic">Celestial</span></figcaption>
+</figure>
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid #2B1F4A">
+<a href="https://www.club77.com.au/news/putrika-article-club77" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid rgba(43, 31, 74, 0.35); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">Get To Know: Putrika</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4696">Club 77</span></a>
+<a href="https://www.abc.net.au/triplejunearthed/artist/putrika" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid rgba(43, 31, 74, 0.35); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">Artist profile</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: #5A4696">triple j Unearthed</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="shows" data-sec="" data-sky="#B3A4D8,#D6CBBE" data-screen-label="Shows">
+<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">shows</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><span style="position: relative; width: 12px; height: 12px; display: inline-block"><span data-pulse="" style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid #2B1F4A"></span><span style="position: absolute; inset: 3px; border-radius: 50%; background: #2B1F4A"></span></span>Upcoming</div>
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid #2B1F4A">
+<sc-for list="{{ upcoming }}" as="s" hint-placeholder-count="1">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid rgba(43, 31, 74, 0.45)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: #2B1F4A">{{ s.note }}</span></span><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span></div>
+</sc-for>
+<sc-if value="{{ noUpcoming }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid rgba(43, 31, 74, 0.45)"><span style="font-size: 26px; font-style: italic">Next show</span><span style="font-size: 16px; letter-spacing: 0.08em">TBC</span></div>
+</sc-if>
+</div>
+<a href="#booking" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin-top: 12px; border-radius: 999px; background: #2B1F4A; color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Book Putrika</a>
+</div>
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; min-height: 12px">Past</div>
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid #2B1F4A">
+<sc-for list="{{ past }}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid rgba(43, 31, 74, 0.45)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: #2B1F4A">{{ s.note }}</span></span><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span></div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="booking" data-sec="" data-night="" data-sky="#2B1F4A,#2B1F4A" data-screen-label="Booking" style="position: relative; overflow: hidden; color: #F4EA94; background: linear-gradient(180deg, rgba(43, 31, 74, 0) 0px, #2B1F4A 240px)">
+<div data-moon="" aria-hidden="true" style="position: absolute; right: 8%; top: 140px; width: clamp(140px, 18vw, 260px); aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle at 36% 34%, #FBF8E6 0%, #F4EA94 55%, #E6D877 100%); box-shadow: 0 0 120px 30px rgba(244, 234, 148, 0.18); will-change: transform"></div>
+<div style="position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(320px, 34vw, 440px) 24px 104px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 64px; align-items: end">
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 24px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #CFC3EE">Booking and press</div>
+<h2 style="margin: 0; font-size: clamp(56px, 8vw, 116px); font-weight: 400; font-style: italic; line-height: 0.95">get in touch</h2>
+</div>
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
+<a href="mailto:bookings@putrika.net" style="font-size: clamp(22px, 2.6vw, 32px); color: #F4EA94; min-height: 44px; display: flex; align-items: center; overflow-wrap: anywhere">bookings@putrika.net</a>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #F4EA94; color: #2B1F4A; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Download press kit [PDF]</a>
+<a href="https://www.instagram.com/putrikamusic/" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1.5px solid #F4EA94; box-sizing: border-box; color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Instagram</a>
+</div>
+</div>
+</div>
+<footer style="position: relative; max-width: 1320px; margin: 0 auto; padding: 28px 24px 40px; box-sizing: border-box; border-top: 1px solid rgba(244, 234, 148, 0.35); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 28px">
+<span style="font-size: 20px; font-style: italic">putrika</span>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px">
+<a href="https://open.spotify.com/artist/5awAtBuVQEV68Nvs1loiby" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Spotify</a>
+<a href="https://putrika.bandcamp.com" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Bandcamp</a>
+<a href="https://soundcloud.com/putrikamusic" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">SoundCloud</a>
+<a href="https://www.instagram.com/putrikamusic/" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Instagram</a>
+<a href="https://www.facebook.com/putrikamusic" style="color: #F4EA94; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Facebook</a>
+</div>
+</footer>
+</section>
+
+</div>
+
+<div data-petals="" aria-hidden="true" style="position: fixed; inset: 0; z-index: 9999; pointer-events: none">
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #F4EA94; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #B3A4D8; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #F4EA94; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #B3A4D8; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #F4EA94; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #B3A4D8; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #F4EA94; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #B3A4D8; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #F4EA94; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #B3A4D8; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #F4EA94; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+<span data-petal="" style="position: absolute; left: 0; top: 0; width: 10px; height: 14px; border-radius: 60% 0 60% 0; background: #B3A4D8; box-shadow: 0 0 0 1px rgba(43, 31, 74, 0.2); opacity: 0"></span>
+</div>
+
+<div data-cursor="" aria-hidden="true" style="position: fixed; left: 0; top: 0; width: 52px; height: 52px; margin: -26px 0 0 -26px; z-index: 10000; pointer-events: none; opacity: 0; transition: opacity 0.25s ease; will-change: transform">
+<img data-cursor-img="" src="assets/flower-cursor.png" alt="" style="width: 100%; height: 100%; border-radius: 50%; display: block; box-shadow: 0 6px 18px -6px rgba(43, 31, 74, 0.55), 0 0 0 1.5px rgba(43, 31, 74, 0.35)">
+<span style="position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: #2B1F4A"></span>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;flowerCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;petals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;skyShift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+
+  componentDidMount() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const $ = s => root.querySelector(s), $$ = s => Array.from(root.querySelectorAll(s));
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = matchMedia('(pointer: fine)').matches;
+    const sky = $('[data-sky]'), secs = $$('[data-sec]'), cover = $('[data-cover]'), marq = $('[data-marquee]');
+    const words = $$('[data-word]'), bio = $('[data-bio]'), moon = $('[data-moon]'), night = $('[data-night]');
+    const pulse = $('[data-pulse]'), cur = $('[data-cursor]'), curImg = $('[data-cursor-img]'), petalEls = $$('[data-petal]');
+    const parse = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    const cols = secs.map(s => s.dataset.sky.split(',').map(parse));
+    const mix = (a, b, t) => 'rgb(' + a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(',') + ')';
+    const clamp = v => Math.max(0, Math.min(1, v));
+    const smooth = t => t * t * (3 - 2 * t);
+
+    if (!reduce) {
+      $$('[data-letter]').forEach((el, i) => el.animate(
+        [{ transform: 'translateY(105%) rotate(6deg)', opacity: 0 }, { transform: 'none', opacity: 1 }],
+        { duration: 1100, delay: 120 + i * 75, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }));
+      $$('[data-intro]').forEach((el, i) => el.animate(
+        [{ transform: 'translateY(24px)', opacity: 0 }, { transform: 'none', opacity: 1 }],
+        { duration: 900, delay: 700 + i * 140, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }));
+      if (cover) cover.animate([{ opacity: 0, transform: 'translateY(40px) scale(.96)' }, { opacity: 1, transform: 'none' }],
+        { duration: 1400, delay: 300, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards', composite: 'add' });
+      const vh0 = innerHeight;
+      const pending = $$('[data-reveal]').filter(el => el.getBoundingClientRect().top > vh0 * 0.9);
+      pending.forEach(el => { el.style.opacity = '0'; });
+      this.io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target; this.io.unobserve(el); el.style.opacity = '';
+        el.animate([{ transform: 'translateY(48px)', opacity: 0 }, { transform: 'none', opacity: 1 }],
+          { duration: 1000, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
+      }), { threshold: 0.12 });
+      pending.forEach(el => this.io.observe(el));
+    }
+
+    const m = { x: innerWidth / 2, y: innerHeight / 2, cx: innerWidth / 2, cy: innerHeight / 2, in: false, hover: false, lx: 0, ly: 0 };
+    const petals = petalEls.map(el => ({ el, life: 0 }));
+    let pi = 0;
+    const onMove = e => {
+      m.x = e.clientX; m.y = e.clientY;
+      if (!m.in) { m.cx = m.x; m.cy = m.y; m.in = true; }
+      const t = e.target;
+      m.hover = !!(t && t.closest && t.closest('a, button'));
+      m.overFrame = t && t.tagName === 'IFRAME';
+      const dx = m.x - m.lx, dy = m.y - m.ly;
+      if (this.props.petals !== false && !reduce && dx * dx + dy * dy > 1600) {
+        m.lx = m.x; m.ly = m.y;
+        const p = petals[pi++ % petals.length];
+        Object.assign(p, { x: m.x, y: m.y, vx: (Math.random() - 0.5) * 0.8, vy: 0.5 + Math.random() * 0.8, r: Math.random() * 360, vr: (Math.random() - 0.5) * 4, life: 1, ph: Math.random() * 6 });
+      }
+    };
+    const onLeave = () => { m.in = false; };
+    const onDown = () => { m.down = true; };
+    const onUp = () => { m.down = false; };
+    if (fine) {
+      addEventListener('mousemove', onMove, { passive: true });
+      document.documentElement.addEventListener('mouseleave', onLeave);
+      addEventListener('mousedown', onDown); addEventListener('mouseup', onUp);
+    }
+    this.cleanup = () => {
+      removeEventListener('mousemove', onMove);
+      document.documentElement.removeEventListener('mouseleave', onLeave);
+      removeEventListener('mousedown', onDown); removeEventListener('mouseup', onUp);
+      document.body.classList.remove('flower-cursor');
+    };
+
+    let lastY = scrollY, vel = 0, mx = 0, rot = 0, scale = 1, tiltX = 0, tiltY = 0, lastSky = '', skyOn = null;
+    const loop = now => {
+      this.raf = requestAnimationFrame(loop);
+      const vh = innerHeight, y = scrollY;
+      vel += ((y - lastY) - vel) * 0.15; lastY = y;
+
+      const wantSky = this.props.skyShift !== false;
+      if (wantSky !== skyOn) {
+        skyOn = wantSky;
+        secs.forEach((s, i) => { if (!s.hasAttribute('data-night')) s.style.background = wantSky ? '' : 'linear-gradient(180deg,' + mix(cols[i][0], cols[i][0], 0) + ',' + mix(cols[i][1], cols[i][1], 0) + ')'; });
+        lastSky = '';
+      }
+      if (wantSky) {
+        const c = vh / 2; let k = secs.length - 1;
+        for (let i = 0; i < secs.length; i++) { if (secs[i].getBoundingClientRect().bottom > c) { k = i; break; } }
+        const r = secs[k].getBoundingClientRect();
+        const t = clamp((c - r.top) / r.height);
+        const b = Math.min(k + 1, secs.length - 1);
+        const f = k < secs.length - 1 ? smooth(clamp((t - 0.55) / 0.45)) : 0;
+        const bg = 'linear-gradient(180deg,' + mix(cols[k][0], cols[b][0], f) + ',' + mix(cols[k][1], cols[b][1], f) + ')';
+        if (bg !== lastSky) { sky.style.background = bg; lastSky = bg; }
+      } else if (lastSky !== 'off') { sky.style.background = '#B3A4D8'; lastSky = 'off'; }
+
+      if (reduce) return;
+
+      if (cover) {
+        const tx = fine && m.in ? (m.x / innerWidth - 0.5) : 0, ty = fine && m.in ? (m.y / vh - 0.5) : 0;
+        tiltY += (tx * 12 - tiltY) * 0.06; tiltX += (-ty * 9 - tiltX) * 0.06;
+        const fl = Math.sin(now / 1700) * 8, par = Math.min(y, vh) * 0.14;
+        cover.style.transform = 'translate3d(0,' + (fl - par).toFixed(2) + 'px,0) rotateX(' + tiltX.toFixed(2) + 'deg) rotateY(' + tiltY.toFixed(2) + 'deg)';
+      }
+      if (marq) {
+        const w = marq.scrollWidth / 2;
+        mx += 0.55 + Math.min(Math.abs(vel), 60) * 0.25;
+        if (w) mx %= w;
+        marq.style.transform = 'translate3d(' + (-mx).toFixed(1) + 'px,0,0)';
+      }
+      if (bio && words.length) {
+        const r = bio.getBoundingClientRect();
+        const p = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35));
+        words.forEach((w, i) => { const o = 0.16 + 0.84 * clamp(p * words.length - i); w.style.opacity = o.toFixed(3); });
+      }
+      if (moon && night) {
+        const r = night.getBoundingClientRect();
+        const p = smooth(clamp((vh - r.top) / (vh * 0.9)));
+        moon.style.transform = 'translate3d(0,' + ((1 - p) * 220).toFixed(1) + 'px,0)';
+      }
+      if (pulse) {
+        const s = (now % 2000) / 2000;
+        pulse.style.transform = 'scale(' + (1 + s * 1.4).toFixed(3) + ')';
+        pulse.style.opacity = (1 - s).toFixed(3);
+      }
+
+      const wantCur = fine && this.props.flowerCursor !== false;
+      document.body.classList.toggle('flower-cursor', wantCur && m.in && !m.overFrame);
+      if (cur) {
+        cur.style.opacity = wantCur && m.in && !m.overFrame ? '1' : '0';
+        m.cx += (m.x - m.cx) * 0.28; m.cy += (m.y - m.cy) * 0.28;
+        const target = m.down ? 0.8 : m.hover ? 1.75 : 1;
+        scale += (target - scale) * 0.16;
+        rot += m.hover ? 1.6 : 0.35;
+        cur.style.transform = 'translate3d(' + m.cx.toFixed(1) + 'px,' + m.cy.toFixed(1) + 'px,0) scale(' + scale.toFixed(3) + ')';
+        if (curImg) curImg.style.transform = 'rotate(' + rot.toFixed(1) + 'deg)';
+      }
+      petals.forEach(p => {
+        if (p.life <= 0) { if (p.el.style.opacity !== '0') p.el.style.opacity = '0'; return; }
+        p.life -= 0.012; p.ph += 0.05;
+        p.x += p.vx + Math.sin(p.ph) * 0.6; p.y += p.vy; p.r += p.vr;
+        p.el.style.opacity = Math.max(0, p.life * 0.9).toFixed(3);
+        p.el.style.transform = 'translate3d(' + p.x.toFixed(1) + 'px,' + p.y.toFixed(1) + 'px,0) rotate(' + p.r.toFixed(1) + 'deg) scale(' + (0.6 + p.life * 0.5).toFixed(2) + ')';
+      });
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    if (this.io) this.io.disconnect();
+    if (this.cleanup) this.cleanup();
+  }
+
+  // Add shows here. Upcoming vs past is decided by date automatically; if none upcoming, "Next show TBC" shows.
+  // when: shown text; date: YYYY-MM-DD used for sorting (year-only shows use YYYY-12-31).
+  static SHOWS = [
+    { date: '2026-10-14', when: '14 Oct 2026', name: 'State Library of NSW', place: ', Sydney', note: 'Spring Sessions live set, with Lewa (DJ). Free entry.' },
+    { date: '2026-11-01', when: '1 Nov 2026', name: 'Berry', place: '', note: 'Acoustic set with Kyati' },
+    { date: '2027-01-16', when: '16 Jan 2027', name: 'Pasta Buoy', place: ', Huskisson', note: 'DJ set' },
+    { date: '2026-07-25', when: '25 Jul 2026', name: 'Bankstown Arts Centre', place: ', Bankstown', note: 'DJ set' },
+    { date: '2026-06-20', when: '20 Jun 2026', name: 'Reub Goldberg Brewing Machine', place: ', Tarrawanna', note: 'DJ set' },
+    { date: '2026-06-05', when: '5 Jun 2026', name: 'Austinmer Surf Club', place: ', Austinmer', note: 'DJ set, Washing Machine Disco' },
+    { date: '2026-03-13', when: '13 Mar 2026', name: 'Sneaky Possum', place: ', Chippendale', note: 'Live' },
+    { date: '2025-12-19', when: '19 Dec 2025', name: 'Pleasure Club', place: ', Newtown', note: 'Live' },
+    { date: '2025-11-28', when: '28 Nov 2025', name: 'Club 77', place: ', Sydney', note: 'Club set' },
+    { date: '2025-09-28', when: '28 Sep 2025', name: 'Wanita album launch', place: '', note: '' },
+    { date: '2025-09-27', when: '27 Sep 2025', name: 'The Townie', place: ', Newtown', note: 'Live' },
+    { date: '2025-09-20', when: '20 Sep 2025', name: 'Culture Mix Fest', place: ', Wollongong', note: '' },
+    { date: '2025-08-28', when: '28 Aug 2025', name: 'Elton Chong', place: ', Penrith', note: 'Live' },
+    { date: '2025-05-17', when: '17 May 2025', name: 'Reub Goldberg Brewing Machine', place: ', Tarrawanna', note: 'DJ set' },
+    { date: '2024-08-16', when: '16 Aug 2024', name: 'Club 77', place: ', Sydney', note: 'With Jhassic' },
+    { date: '2024-04-20', when: '20 Apr 2024', name: 'Club 77', place: ', Sydney', note: 'Live' },
+    { date: '2023-07-21', when: '21 Jul 2023', name: 'PsyconFest vol.8', place: ', The Red Rattler, Marrickville', note: 'Live' },
+    { date: '2023-12-31', when: '2023', name: 'Sofar Sounds', place: '', note: '' },
+    { date: '2022-10-14', when: '14 Oct 2022', name: 'The Lord Gladstone Hotel', place: ', Chippendale', note: 'Live set' }
+  ];
+
+  renderVals() {
+    const today = new Date().toISOString().slice(0, 10);
+    const all = Component.SHOWS;
+    const upcoming = all.filter(s => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+    const past = all.filter(s => s.date < today).sort((a, b) => b.date.localeCompare(a.date));
+    return { rootRef: this.rootRef, upcoming, past, noUpcoming: upcoming.length === 0 };
+  }
+}
+</script>
+</body>
+</html>
