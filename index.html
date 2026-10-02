@@ -231,7 +231,8 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 </div>
 
 <div data-cursor="" aria-hidden="true" style="position: fixed; left: 0; top: 0; width: 52px; height: 52px; margin: -26px 0 0 -26px; z-index: 10000; pointer-events: none; opacity: 0; transition: opacity 0.25s ease; will-change: transform">
-<img data-cursor-img="" src="assets/flower-cursor.png" alt="" style="width: 100%; height: 100%; border-radius: 50%; display: block; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--ink) 55%, transparent), 0 0 0 1.5px color-mix(in srgb, var(--ink) 35%, transparent)">
+<img data-cursor-img="" src="{{ rel.cursor }}" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--ink) 55%, transparent), 0 0 0 1.5px color-mix(in srgb, var(--ink) 35%, transparent)">
+<span style="position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 1.5px var(--cream)"></span>
 <span style="position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border-radius: 50%; background: var(--ink)"></span>
 </div>
 
@@ -695,7 +696,7 @@ class Component extends DCLogic {
     const embedSrc = r.spotifyId ? 'https://open.spotify.com/embed/' + r.spotifyId + '?utm_source=generator&theme=0' : r.embed[0];
     const embedH = r.spotifyId ? (r.spotifyId.startsWith('album') ? 352 : 152) : r.embed[1];
     const rel = { cta: tx.listenTo + r.title, title: r.title, display: r.title.toLowerCase(), kind: loc(r.kind), meta: loc(r.meta), note: loc(r.note || ''), hasNote: !!r.note,
-      cover: r.cover, alt: r.alt, coverLabel: r.title + tx.goToMusic, embedSrc, embedH, embedTitle: r.title + ' player' };
+      cover: r.cover, cursor: r.id === 'wanita' ? 'assets/flower-cursor.png' : r.cover, alt: r.alt, coverLabel: r.title + tx.goToMusic, embedSrc, embedH, embedTitle: r.title + ' player' };
     const tracks = r.tracks.map((t, i) => ({ n: String(i + 1).padStart(2, '0'), title: t[0], href: t[1] || r.bandcamp }));
     let base = []; const names = r.tracks.map(t => t[0]);
     while (base.length < 10) base = base.concat(names);
