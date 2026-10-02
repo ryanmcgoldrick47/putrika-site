@@ -60,28 +60,29 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 
 <section data-sec="" data-sky="lav,butter" data-screen-label="Hero" style="min-height: 100vh; display: flex; flex-direction: column">
 <header style="width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px 32px">
+<button type="button" data-lang-btn="" onClick="{{ toggleLang }}" style="margin-right: auto; min-height: 44px; padding: 0 2px; background: none; border: 0; font: inherit; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); cursor: pointer; text-decoration: underline; text-underline-offset: 5px">{{ langLabel }}</button>
 <button type="button" data-menu-btn="" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" style="width: 48px; height: 48px; padding: 0; align-items: center; justify-content: center; background: none; border: 1.5px solid var(--ink); border-radius: 999px; color: var(--ink)"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h16"></path><path d="M3 11h16"></path><path d="M3 16h16"></path></svg></button>
 <nav id="site-nav" data-nav="" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px">
-<a href="#music" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Music</a>
-<a href="#about" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">About</a>
-<a href="#shows" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Shows</a>
-<a href="#booking" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Booking</a>
+<a href="#music" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.music }}</a>
+<a href="#about" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.about }}</a>
+<a href="#shows" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.shows }}</a>
+<a href="#booking" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.booking }}</a>
 </nav>
 </header>
 <div id="top" style="flex: 1; width: 100%; max-width: 1320px; margin: 0 auto; padding: 24px 24px 96px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 48px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 32px; position: relative; z-index: 2">
 <h1 aria-label="putrika" style="margin: 0; font-size: clamp(64px, 10.5vw, 144px); font-weight: 400; font-style: italic; line-height: 0.88; letter-spacing: -0.02em; display: flex; clip-path: inset(0 -50vw); padding-bottom: 0.08em"><span data-letter="" aria-hidden="true" style="display: inline-block">p</span><span data-letter="" aria-hidden="true" style="display: inline-block">u</span><span data-letter="" aria-hidden="true" style="display: inline-block">t</span><span data-letter="" aria-hidden="true" style="display: inline-block">r</span><span data-letter="" aria-hidden="true" style="display: inline-block">i</span><span data-letter="" aria-hidden="true" style="display: inline-block">k</span><span data-letter="" aria-hidden="true" style="display: inline-block">a</span></h1>
-<p data-intro="" style="margin: 0; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; max-width: 22em">alt-soul electronica /<br>from java island to dharawal country</p>
+<p data-intro="" style="margin: 0; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; max-width: 22em">{{ tx.tag1 }}<br>{{ tx.tag2 }}</p>
 <div data-intro="" style="display: flex; flex-wrap: wrap; gap: 14px">
 <a href="#music" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border-radius: 999px; background: var(--ink); color: var(--butter); font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">{{ rel.cta }}</a>
-<a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border-radius: 999px; border: 1.5px solid var(--ink); box-sizing: border-box; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease, background 0.3s ease" style-hover="transform: translateY(-3px); background: color-mix(in srgb, var(--cream) 50%, transparent)">Bookings</a>
+<a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border-radius: 999px; border: 1.5px solid var(--ink); box-sizing: border-box; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease, background 0.3s ease" style-hover="transform: translateY(-3px); background: color-mix(in srgb, var(--cream) 50%, transparent)">{{ tx.bookings }}</a>
 </div>
 </div>
 <div style="perspective: 1200px; justify-self: center; width: 100%; max-width: 580px">
 <a href="#music" aria-label="{{ rel.coverLabel }}" style="display: block">
 <div data-cover="" style="position: relative; width: 100%; aspect-ratio: 1 / 1; will-change: transform">
 <div style="position: relative; width: 100%; height: 100%; overflow: hidden; background: repeating-linear-gradient(135deg, var(--cream) 0 12px, var(--mid) 12px 24px); box-shadow: 0 40px 80px -36px color-mix(in srgb, var(--ink) 60%, transparent); display: flex; align-items: flex-end; padding: 20px; box-sizing: border-box">
-<span style="font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: var(--ink)">cover art: {{ rel.title }}</span>
+<span style="font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: var(--ink)">{{ tx.coverArt }} {{ rel.title }}</span>
 <img data-ci="hero" data-src="{{ rel.cover }}" alt="{{ rel.alt }}" style="opacity: 0; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease">
 </div>
 </div>
@@ -108,7 +109,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <sc-for list="{{ outlineLinks }}" as="l" hint-placeholder-count="3"><a href="{{ l.href }}" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease; border: 1.5px solid var(--ink); box-sizing: border-box" style-hover="transform: translateY(-3px)">{{ l.label }}</a></sc-for>
 </div>
 <iframe title="{{ rel.embedTitle }}" src="{{ rel.embedSrc }}" height="{{ rel.embedH }}" width="100%" loading="lazy" allow="autoplay *; clipboard-write; encrypted-media *; fullscreen *; picture-in-picture" style="border: 0; border-radius: 12px; display: block; margin-top: 12px; max-width: 540px; background: transparent"></iframe>
-<a href="https://putrika.bandcamp.com/" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease; border: 1.5px solid var(--ink); box-sizing: border-box" style-hover="transform: translateY(-3px)">Merch on Bandcamp</a>
+<a href="https://putrika.bandcamp.com/" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease; border: 1.5px solid var(--ink); box-sizing: border-box" style-hover="transform: translateY(-3px)">{{ tx.merch }}</a>
 </div>
 <ol data-reveal="" data-tracks="" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1.5px solid var(--ink); align-self: start">
 <sc-for list="{{ tracks }}" as="t" hint-placeholder-count="10"><li style="border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent)"><a href="{{ t.href }}" style="display: flex; align-items: baseline; gap: 24px; min-height: 64px; padding: 16px 8px; box-sizing: border-box; text-decoration: none; font-size: 28px; background-image: linear-gradient(90deg, var(--lav), var(--butter)); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="background-size: 100% 100%; padding-left: 28px"><span style="font-size: 15px; letter-spacing: 0.12em; color: var(--accent); width: 28px">{{ t.n }}</span><span style="font-style: italic">{{ t.title }}</span></a></li></sc-for>
@@ -119,20 +120,20 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <section id="about" data-sec="" data-sky="cream,butter" data-screen-label="About">
 <div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 80px">
 <div style="display: flex; flex-direction: column; gap: 28px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">About</div>
-<p data-bio="" style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.15; max-width: 18em; text-wrap: pretty"><span data-word="">Jakarta-born, </span><span data-word="">Dharawal </span><span data-word="">country-based </span><span data-word="" style="font-style: italic">singer, </span><span data-word="" style="font-style: italic">songwriter, </span><span data-word="">and </span><span data-word="" style="font-style: italic">electronic </span><span data-word="" style="font-style: italic">music </span><span data-word="" style="font-style: italic">producer.</span></p>
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">{{ tx.about }}</div>
+<p data-bio="" style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.15; max-width: 18em; text-wrap: pretty"><sc-for list="{{ bioWords }}" as="w" hint-placeholder-count="9"><span data-word="" style="font-style: {{ w.fs }}">{{ w.t }}</span></sc-for></p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
-<p data-reveal="" style="margin: 0; font-size: 18px; color: var(--ink); max-width: 34em; font-size: 20px; line-height: 1.6; text-wrap: pretty"><span style="font-style: italic">Putrika</span> (born Putri Karina) is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots.</p>
+<p data-reveal="" style="margin: 0; font-size: 18px; color: var(--ink); max-width: 34em; font-size: 20px; line-height: 1.6; text-wrap: pretty"><span style="font-style: italic">Putrika</span>{{ tx.bio }}</p>
 <div data-reveal="" style="display: flex; flex-direction: column; gap: 40px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">Press</div>
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">{{ tx.press }}</div>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
 <blockquote style="margin: 0; font-size: 28px; font-style: italic; line-height: 1.3; text-wrap: pretty">&ldquo;Putrika, this is pretty epic! Love the fusion of sounds and feelings&rdquo;</blockquote>
-<figcaption style="font-size: 16px">Anika Luna, triple j, on <span style="font-style: italic">Celestial</span></figcaption>
+<figcaption style="font-size: 16px">{{ tx.quoteBy }} <span style="font-style: italic">Celestial</span></figcaption>
 </figure>
 <div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
 <a href="https://www.club77.com.au/news/putrika-article-club77" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">Get To Know: Putrika</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">Club 77</span></a>
-<a href="https://www.abc.net.au/triplejunearthed/artist/putrika" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">Artist profile</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">triple j Unearthed</span></a>
+<a href="https://www.abc.net.au/triplejunearthed/artist/putrika" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">{{ tx.artistProfile }}</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">triple j Unearthed</span></a>
 </div>
 </div>
 </div>
@@ -141,22 +142,22 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 
 <section id="shows" data-sec="" data-sky="lav,mid" data-screen-label="Shows">
 <div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
-<h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">shows</h2>
+<h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">{{ tx.showsH }}</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
 <div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><span style="position: relative; width: 12px; height: 12px; display: inline-block"><span data-pulse="" style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--ink)"></span><span style="position: absolute; inset: 3px; border-radius: 50%; background: var(--ink)"></span></span>Upcoming</div>
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><span style="position: relative; width: 12px; height: 12px; display: inline-block"><span data-pulse="" style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--ink)"></span><span style="position: absolute; inset: 3px; border-radius: 50%; background: var(--ink)"></span></span>{{ tx.upcoming }}</div>
 <div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
 <sc-for list="{{ upcoming }}" as="s" hint-placeholder-count="1">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: var(--ink)">{{ s.note }}</span></span><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span></div>
 </sc-for>
 <sc-if value="{{ noUpcoming }}" hint-placeholder-val="{{ false }}">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="font-size: 26px; font-style: italic">Next show</span><span style="font-size: 16px; letter-spacing: 0.08em">TBC</span></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="font-size: 26px; font-style: italic">{{ tx.nextShow }}</span><span style="font-size: 16px; letter-spacing: 0.08em">{{ tx.tbc }}</span></div>
 </sc-if>
 </div>
-<a href="#booking" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin-top: 12px; border-radius: 999px; background: var(--ink); color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Book Putrika</a>
+<a href="#booking" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin-top: 12px; border-radius: 999px; background: var(--ink); color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">{{ tx.bookPutrika }}</a>
 </div>
 <div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; min-height: 12px">Past</div>
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; min-height: 12px">{{ tx.past }}</div>
 <div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
 <sc-for list="{{ past }}" as="s" hint-placeholder-count="4">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: var(--ink)">{{ s.note }}</span></span><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span></div>
@@ -171,13 +172,13 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <div data-moon="" aria-hidden="true" style="position: absolute; right: 8%; top: 140px; width: clamp(140px, 18vw, 260px); aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle at 36% 34%, var(--cream) 0%, var(--butter) 55%, var(--butter) 100%); box-shadow: 0 0 120px 30px color-mix(in srgb, var(--butter) 18%, transparent); will-change: transform"></div>
 <div style="position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(320px, 34vw, 440px) 24px 104px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 64px; align-items: end">
 <div data-reveal="" style="display: flex; flex-direction: column; gap: 24px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--soft)">Booking and press</div>
-<h2 style="margin: 0; font-size: clamp(56px, 8vw, 116px); font-weight: 400; font-style: italic; line-height: 0.95">get in touch</h2>
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--soft)">{{ tx.bookingPress }}</div>
+<h2 style="margin: 0; font-size: clamp(56px, 8vw, 116px); font-weight: 400; font-style: italic; line-height: 0.95">{{ tx.getInTouch }}</h2>
 </div>
 <div data-reveal="" style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
 <a href="{{ bookMailto }}" style="font-size: clamp(22px, 2.6vw, 32px); color: var(--butter); min-height: 44px; display: flex; align-items: center; overflow-wrap: anywhere">{{ bookEmail }}</a>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: var(--butter); color: var(--ink); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Download press kit [PDF]</a>
+<a href="#booking" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: var(--butter); color: var(--ink); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">{{ tx.pressKit }}</a>
 <a href="https://www.instagram.com/putrikamusic/" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1.5px solid var(--butter); box-sizing: border-box; color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">Instagram</a>
 </div>
 </div>
@@ -192,7 +193,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <a href="https://www.instagram.com/putrikamusic/" style="color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Instagram</a>
 <a href="https://www.facebook.com/putrikamusic" style="color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">Facebook</a>
 </div>
-<a href="https://ryanmcgoldrick.com" style="width: 100%; display: flex; justify-content: flex-end; align-items: center; min-height: 44px; color: var(--soft); font-size: 14px; letter-spacing: 0.08em; text-decoration: none">website design</a>
+<a href="https://ryanmcgoldrick.com" style="width: 100%; display: flex; justify-content: flex-end; align-items: center; min-height: 44px; color: var(--soft); font-size: 14px; letter-spacing: 0.08em; text-decoration: none">{{ tx.credit }}</a>
 </footer>
 </section>
 
@@ -238,7 +239,9 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <script type="text/x-dc" data-dc-script data-props="{&quot;flowerCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;petals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;skyShift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;autoPalette&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Discography&quot;}}">
 class Component extends DCLogic {
   rootRef = React.createRef();
-  state = { rel: Component.initialRel(), hover: null, dog: false };
+  state = { rel: Component.initialRel(), hover: null, dog: false, lang: Component.initialLang() };
+  static initialLang() { try { return new URLSearchParams(location.search).get('lang') === 'id' ? 'id' : 'en'; } catch (e) { return 'en'; } }
+  toggleLang = () => { const lang = this.state.lang === 'id' ? 'en' : 'id'; this.langDirty = true; document.documentElement.lang = lang; this.setState({ lang }); };
   auto = {};
   discTarget = 0;
 
@@ -388,7 +391,7 @@ class Component extends DCLogic {
     const reduce = this.reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const fine = matchMedia('(pointer: fine)').matches;
     const sky = $('[data-sky]'), secs = $$('[data-sec]'), cover = $('[data-cover]'), marq = $('[data-marquee]'), disc = $('[data-disc]');
-    const words = $$('[data-word]'), bio = $('[data-bio]'), moon = $('[data-moon]'), night = $('[data-night]');
+    let words = $$('[data-word]'), bio = $('[data-bio]'), moon = $('[data-moon]'), night = $('[data-night]');
     const pulse = $('[data-pulse]'), cur = $('[data-cursor]'), curImg = $('[data-cursor-img]'), petalEls = $$('[data-petal]');
     const parse = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
     const keys = secs.map(s => s.dataset.sky.split(','));
@@ -583,6 +586,7 @@ class Component extends DCLogic {
         if (w) mx %= w;
         marq.style.transform = 'translate3d(' + (-mx).toFixed(1) + 'px,0,0)';
       }
+      if (this.langDirty) { words = $$('[data-word]'); bio = $('[data-bio]'); this.langDirty = false; }
       if (bio && words.length) {
         const r = bio.getBoundingClientRect();
         const p = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35));
@@ -666,6 +670,17 @@ class Component extends DCLogic {
   ];
 
 
+  static TX = {"en": {"music": "Music", "about": "About", "shows": "Shows", "booking": "Booking", "bookings": "Bookings", "press": "Press", "showsH": "shows", "upcoming": "Upcoming", "past": "Past", "nextShow": "Next show", "tbc": "TBC", "bookPutrika": "Book Putrika", "bookingPress": "Booking and press", "getInTouch": "get in touch", "pressKit": "Download press kit [PDF]", "credit": "website design", "merch": "Merch on Bandcamp", "artistProfile": "Artist profile", "tag1": "alt-soul electronica /", "tag2": "from java island to dharawal country", "coverArt": "cover art:", "quoteBy": "Anika Luna, triple j, on", "listenTo": "Listen to ", "buyBandcamp": "Buy on Bandcamp", "goToMusic": ": go to music", "bio": " (born Putri Karina) is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots."}, "id": {"music": "Musik", "about": "Tentang", "shows": "Pertunjukan", "booking": "Booking", "bookings": "Booking", "press": "Pers", "showsH": "pertunjukan", "upcoming": "Mendatang", "past": "Sebelumnya", "nextShow": "Pertunjukan berikutnya", "tbc": "Segera diumumkan", "bookPutrika": "Booking Putrika", "bookingPress": "Booking dan pers", "getInTouch": "hubungi putrika", "pressKit": "Unduh press kit [PDF]", "credit": "desain situs", "merch": "Merchandise di Bandcamp", "artistProfile": "Profil artis", "tag1": "alt-soul electronica /", "tag2": "dari pulau jawa ke tanah dharawal", "coverArt": "sampul:", "quoteBy": "Anika Luna, triple j, tentang", "listenTo": "Dengarkan ", "buyBandcamp": "Beli di Bandcamp", "goToMusic": ": ke bagian musik", "bio": " (lahir Putri Karina) adalah penyanyi, penulis lagu, produser musik elektronik, dan selector kelahiran Jakarta yang berbasis di Australia. Kini tinggal di tanah Dharawal/Illawarra setelah lebih dari satu dekade menetap di Tanah Gadigal (Sydney), ia menciptakan warna musik khas yang disebut alt-soul electronica. Musiknya memadukan vokal berlapis, synth eksperimental, ritme perkusif, dan lanskap suara ambient, dengan pengaruh kuat dari musik elektronik Barat serta akar tradisi Indonesianya."}};
+  static BIO_WORDS = {"en": [["Jakarta-born, ", 0], ["Dharawal ", 0], ["country-based ", 0], ["singer, ", 1], ["songwriter, ", 1], ["and ", 0], ["electronic ", 1], ["music ", 1], ["producer.", 1]], "id": [["Penyanyi, ", 1], ["penulis ", 1], ["lagu, ", 1], ["dan ", 0], ["produser ", 1], ["musik ", 1], ["elektronik ", 1], ["kelahiran ", 0], ["Jakarta ", 0], ["yang ", 0], ["berbasis ", 0], ["di ", 0], ["tanah ", 0], ["Dharawal.", 0]]};
+  static ID_MAP = {"New album": "Album baru", "Single": "Single", "EP": "EP", "DJ set": "Set DJ", "Live": "Live", "Club set": "Set klub", "Live set": "Set live", "With Jhassic": "Bersama Jhassic", "Acoustic set with Kyati": "Set akustik bersama Kyati", "DJ set, Washing Machine Disco": "Set DJ, Washing Machine Disco", "Spring Sessions live set, with Lewa (DJ). Free entry.": "Set live Spring Sessions, bersama Lewa (DJ). Gratis.", "Wanita album launch": "Peluncuran album Wanita", "Featured in Netflix’s Heartbreak High.": "Tampil di serial Netflix Heartbreak High."};
+  static ID_MONTHS = { January: 'Januari', February: 'Februari', March: 'Maret', May: 'Mei', June: 'Juni', July: 'Juli', August: 'Agustus', October: 'Oktober', December: 'Desember', Oct: 'Okt', Aug: 'Agu', Dec: 'Des' };
+  static toId(str) {
+    if (!str) return str;
+    if (Component.ID_MAP[str]) return Component.ID_MAP[str];
+    return str.replace(/(\d+) track album\./, 'Album $1 lagu.').replace(/(\d+) track EP\./, 'EP $1 lagu.').replace('Released', 'Dirilis')
+      .replace(/\b(January|February|March|May|June|July|August|October|December|Oct|Aug|Dec)\b/g, m => Component.ID_MONTHS[m]);
+  }
+
   renderVals() {
     const today = new Date().toISOString().slice(0, 10);
     const all = Component.SHOWS;
@@ -673,14 +688,16 @@ class Component extends DCLogic {
     const past = all.filter(s => s.date < today).sort((a, b) => b.date.localeCompare(a.date));
     const bookEmail = ['bookings', 'putrika.net'].join('@');
     const r = this.rel();
+    const L = this.state.lang, tx = Component.TX[L], loc = v => L === 'id' ? Component.toId(v) : v;
+    const locShow = x => L === 'id' ? Object.assign({}, x, { when: loc(x.when), note: loc(x.note), name: loc(x.name) }) : x;
     const embedSrc = r.spotifyId ? 'https://open.spotify.com/embed/' + r.spotifyId + '?utm_source=generator&theme=0' : r.embed[0];
     const embedH = r.spotifyId ? (r.spotifyId.startsWith('album') ? 352 : 152) : r.embed[1];
-    const rel = { cta: 'Listen to ' + r.title, title: r.title, display: r.title.toLowerCase(), kind: r.kind, meta: r.meta, note: r.note || '', hasNote: !!r.note,
-      cover: r.cover, alt: r.alt, coverLabel: r.title + ': go to music', embedSrc, embedH, embedTitle: r.title + ' player' };
+    const rel = { cta: tx.listenTo + r.title, title: r.title, display: r.title.toLowerCase(), kind: loc(r.kind), meta: loc(r.meta), note: loc(r.note || ''), hasNote: !!r.note,
+      cover: r.cover, alt: r.alt, coverLabel: r.title + tx.goToMusic, embedSrc, embedH, embedTitle: r.title + ' player' };
     const tracks = r.tracks.map((t, i) => ({ n: String(i + 1).padStart(2, '0'), title: t[0], href: t[1] || r.bandcamp }));
     let base = []; const names = r.tracks.map(t => t[0]);
     while (base.length < 10) base = base.concat(names);
-    const solidLinks = [{ label: 'Spotify', href: r.spotify || Component.ARTIST_SPOTIFY }, { label: r.bandcampLabel || 'Buy on Bandcamp', href: r.bandcamp }];
+    const solidLinks = [{ label: 'Spotify', href: r.spotify || Component.ARTIST_SPOTIFY }, { label: r.bandcampLabel || tx.buyBandcamp, href: r.bandcamp }];
     const outlineLinks = [{ label: 'Apple Music', href: r.apple }, { label: 'SoundCloud', href: 'https://soundcloud.com/putrikamusic' }, { label: 'triple j Unearthed', href: 'https://www.abc.net.au/triplejunearthed/artist/putrika' }];
     const hov = this.state.hover;
     const shelf = Component.RELEASES.map(x => {
@@ -689,7 +706,8 @@ class Component extends DCLogic {
         pressed: on ? 'true' : 'false', w: h ? 64 : on ? 30 : 16, labelOpacity: h ? 1 : 0,
         shadow: on ? 'inset 0 0 0 2px var(--ink)' : 'none' };
     });
-    return { rootRef: this.rootRef, upcoming, past, noUpcoming: upcoming.length === 0, bookEmail, bookMailto: 'mailto:' + bookEmail,
+    return { rootRef: this.rootRef, upcoming: upcoming.map(locShow), past: past.map(locShow), tx, toggleLang: this.toggleLang, langLabel: L === 'id' ? 'English' : 'Bahasa',
+      bioWords: Component.BIO_WORDS[L].map(w => ({ t: w[0], fs: w[1] ? 'italic' : 'normal' })), noUpcoming: upcoming.length === 0, bookEmail, bookMailto: 'mailto:' + bookEmail,
       rel, tracks, marquee: base.concat(base), solidLinks, outlineLinks, shelf, dogOpen: this.state.dog };
   }
 }
