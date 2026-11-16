@@ -14,6 +14,7 @@ const RETURN_URL = 'https://putrika.net/?order={CHECKOUT_SESSION_ID}#shop';
 // id: { name, price in cents (AUD), size: 'letter' fits a large letter, 'parcel' needs a satchel }
 const PRODUCTS = {
   'magnet-wildflower': { name: 'Wildflower bunch fridge magnet', price: 1500, size: 'letter', max: 10 },
+  'seeds-billy-buttons': { name: 'Billy buttons seeds (native wildflower)', price: 800, size: 'letter', max: 10, seeds: true },
   'tote-celestial': { name: 'Celestial tote bag', price: 3500, size: 'parcel', max: 5 },
 };
 
@@ -55,13 +56,14 @@ export default {
     form.set('shipping_address_collection[allowed_countries][0]', 'AU');
     form.set('phone_number_collection[enabled]', 'false');
 
-    let i = 0, needsParcel = false;
+    let i = 0, needsParcel = false, hasSeeds = false;
     for (const item of cart.slice(0, 20)) {
       const p = PRODUCTS[item && item.id];
       const qty = Math.floor(Number(item && item.qty));
       if (!p || !(qty >= 1)) return json({ error: 'Unknown item' }, 400, origin);
       if (qty > p.max) return json({ error: 'Too many of one item' }, 400, origin);
       if (p.size === 'parcel') needsParcel = true;
+      if (p.seeds) hasSeeds = true;
       form.set(`line_items[${i}][quantity]`, String(qty));
       form.set(`line_items[${i}][price_data][currency]`, 'aud');
       form.set(`line_items[${i}][price_data][unit_amount]`, String(p.price));
@@ -69,6 +71,7 @@ export default {
       i++;
     }
 
+    if (hasSeeds) form.set('custom_text[shipping_address][message]', 'Seed packets can\'t be posted to WA or Tasmania. Orders to those states will be refunded.');
     const ship = SHIPPING[needsParcel ? 'parcel' : 'letter'];
     form.set('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
     form.set('shipping_options[0][shipping_rate_data][display_name]', ship.name);
