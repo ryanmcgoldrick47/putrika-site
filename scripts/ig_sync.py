@@ -5,14 +5,18 @@ Pulls the latest posts from Putrika's Instagram through the official
 Instagram API, saves the images and videos into ig/media/, and writes
 ig/feed.json for the "moments" section of the site.
 
-Needs the IG_TOKEN environment variable (a long-lived Instagram token).
-If the token gets refreshed, the new one is written to .ig_new_token so
+Needs the IG_TOKEN environment variable. Two kinds work:
+- a Meta system-user token (Facebook Login for Business, never expires): read via graph.facebook.com
+- an Instagram-login token (starts with IG, lasts 60 days): read via graph.instagram.com and refreshed
+If an Instagram-login token gets refreshed, the new one is written to .ig_new_token so
 the GitHub workflow can save it back as a secret.
 """
 import json, os, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone
 
 API = 'https://graph.instagram.com'
+FB_API = 'https://graph.facebook.com/v21.0'
+IG_USER_ID = os.environ.get('IG_USER_ID', '17841400949493020')  # putrikamusic
 OUT = 'ig'
 MEDIA = os.path.join(OUT, 'media')
 LIMIT = 12                  # posts kept on the site
@@ -55,8 +59,10 @@ def main():
     if not token:
         sys.exit('IG_TOKEN is not set')
 
-    # Keep the token alive (long-lived tokens last 60 days; refreshing resets that).
-    try:
+    ig_login = token.startswith('IG')
+    # Keep an Instagram-login token alive (they last 60 days; refreshing resets that).
+    if ig_login:
+      try:
         r = get_json(API + '/refresh_access_token?' + urllib.parse.urlencode({'grant_type': 'ig_refresh_token', 'access_token': token}))
         new = r.get('access_token')
         if new and new != token:
@@ -64,10 +70,11 @@ def main():
                 f.write(new)
             token = new
         print('token ok, expires in about', int(r.get('expires_in', 0) / 86400), 'days')
-    except Exception as e:
+      except Exception as e:
         print('token refresh skipped:', e)
 
-    data = get_json(API + '/me/media?' + urllib.parse.urlencode({'fields': FIELDS, 'limit': LIMIT, 'access_token': token}))
+    base = (API + '/me/media?') if ig_login else (FB_API + '/' + IG_USER_ID + '/media?')
+    data = get_json(base + urllib.parse.urlencode({'fields': FIELDS, 'limit': LIMIT, 'access_token': token}))
     os.makedirs(MEDIA, exist_ok=True)
     keep, posts, moments = set(), [], []
 
