@@ -28,7 +28,7 @@ function cors(origin) {
   const ok = ALLOWED_ORIGINS.includes(origin) || /^http:\/\/localhost(:\d+)?$/.test(origin || '');
   return {
     'Access-Control-Allow-Origin': ok ? origin : ALLOWED_ORIGINS[0],
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
   };
@@ -42,8 +42,26 @@ export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin');
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors(origin) });
-    if (request.method !== 'POST') return json({ error: 'POST only' }, 405, origin);
     if (!env.STRIPE_SECRET_KEY) return json({ error: 'Shop is not set up yet' }, 503, origin);
+
+    // GET ?session=cs_...: order summary for the thank-you screen.
+    if (request.method === 'GET') {
+      const id = new URL(request.url).searchParams.get('session') || '';
+      if (!/^cs_(test|live)_[A-Za-z0-9]+$/.test(id)) return json({ error: 'Bad session' }, 400, origin);
+      const r = await fetch(`https://api.stripe.com/v1/checkout/sessions/${id}?expand[]=line_items`, { headers: { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}` } });
+      const s = await r.json();
+      if (!r.ok) return json({ error: 'Order not found' }, 404, origin);
+      const ref = s.payment_intent ? String(s.payment_intent).slice(-8).toUpperCase() : id.slice(-8).toUpperCase();
+      return json({
+        status: s.status, paid: s.payment_status === 'paid', ref,
+        email: (s.customer_details && s.customer_details.email) || '',
+        name: (s.customer_details && s.customer_details.name) || '',
+        items: ((s.line_items && s.line_items.data) || []).map(li => ({ name: li.description, qty: li.quantity, amount: li.amount_total })),
+        shipping: (s.total_details && s.total_details.amount_shipping) || 0,
+        total: s.amount_total || 0,
+      }, 200, origin);
+    }
+    if (request.method !== 'POST') return json({ error: 'POST only' }, 405, origin);
 
     let cart;
     try { cart = (await request.json()).items; } catch { return json({ error: 'Bad request' }, 400, origin); }
