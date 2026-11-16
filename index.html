@@ -81,8 +81,10 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <button type="button" data-menu-btn="" aria-label="Menu" aria-expanded="false" aria-controls="site-nav" style="width: 48px; height: 48px; padding: 0; align-items: center; justify-content: center; background: none; border: 1.5px solid var(--ink); border-radius: 999px; color: var(--ink)"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h16"></path><path d="M3 11h16"></path><path d="M3 16h16"></path></svg></button>
 <nav id="site-nav" data-nav="" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px">
 <a href="#music" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.music }}</a>
-<a href="#about" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.about }}</a>
+<sc-if value="{{ igOn }}" hint-placeholder-val="{{ false }}"><a href="#moments" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.momentsNav }}</a></sc-if>
 <a href="#shows" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.shows }}</a>
+<sc-if value="{{ shopOn }}" hint-placeholder-val="{{ false }}"><a href="#shop" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.shop }}</a></sc-if>
+<a href="#about" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.about }}</a>
 <a href="#booking" style="font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; min-height: 44px; display: flex; align-items: center">{{ tx.booking }}</a>
 </nav>
 </header>
@@ -134,59 +136,8 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 </div>
 </section>
 
-<section id="about" data-sec="" data-sky="cream,butter" data-screen-label="About">
-<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 80px">
-<div style="display: flex; flex-direction: column; gap: 28px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">{{ tx.about }}</div>
-<p data-bio="" style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.15; max-width: 18em; text-wrap: pretty"><sc-for list="{{ bioWords }}" as="w" hint-placeholder-count="9"><span data-word="" style="font-style: {{ w.fs }}">{{ w.t }}</span></sc-for></p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
-<p data-reveal="" style="margin: 0; font-size: 18px; color: var(--ink); max-width: 34em; font-size: 20px; line-height: 1.6; text-wrap: pretty"><span style="font-style: italic">Putrika</span>{{ tx.bio }}</p>
-<div data-reveal="" style="display: flex; flex-direction: column; gap: 40px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">{{ tx.press }}</div>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
-<blockquote style="margin: 0; font-size: 28px; font-style: italic; line-height: 1.3; text-wrap: pretty">&ldquo;Putrika, this is pretty epic! Love the fusion of sounds and feelings&rdquo;</blockquote>
-<figcaption style="font-size: 16px">{{ tx.quoteBy }} <span style="font-style: italic">Celestial</span></figcaption>
-</figure>
-<div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
-<a href="https://www.club77.com.au/news/putrika-article-club77" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">Get To Know: Putrika</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">Club 77</span></a>
-<a href="https://www.abc.net.au/triplejunearthed/artist/putrika" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">{{ tx.artistProfile }}</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">triple j Unearthed</span></a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="shows" data-sec="" data-sky="lav,mid" data-screen-label="Shows">
-<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
-<h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">{{ tx.showsH }}</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
-<div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><span style="position: relative; width: 12px; height: 12px; display: inline-block"><span data-pulse="" style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--ink)"></span><span style="position: absolute; inset: 3px; border-radius: 50%; background: var(--ink)"></span></span>{{ tx.upcoming }}</div>
-<div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
-<sc-for list="{{ upcoming }}" as="s" hint-placeholder-count="1">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: var(--ink)">{{ s.note }}</span></span><span style="display: inline-flex; align-items: baseline; gap: 14px"><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span><sc-if value="{{ s.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ s.link }}" target="_blank" rel="noopener" data-showlink="" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; padding: 4px 12px; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease" style-hover="background: var(--ink); color: var(--butter)">{{ s.linkLabel }} ↗</a></sc-if></span></div>
-</sc-for>
-<sc-if value="{{ noUpcoming }}" hint-placeholder-val="{{ false }}">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="font-size: 26px; font-style: italic">{{ tx.nextShow }}</span><span style="font-size: 16px; letter-spacing: 0.08em">{{ tx.tbc }}</span></div>
-</sc-if>
-</div>
-<a href="#booking" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin-top: 12px; border-radius: 999px; background: var(--ink); color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">{{ tx.bookPutrika }}</a>
-</div>
-<div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
-<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; min-height: 12px">{{ tx.past }}</div>
-<div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
-<sc-for list="{{ past }}" as="s" hint-placeholder-count="4">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: var(--ink)">{{ s.note }}</span></span><span style="display: inline-flex; align-items: baseline; gap: 14px"><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span><sc-if value="{{ s.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ s.link }}" target="_blank" rel="noopener" data-showlink="" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; padding: 4px 12px; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease" style-hover="background: var(--ink); color: var(--butter)">{{ s.linkLabel }} ↗</a></sc-if></span></div>
-</sc-for>
-</div>
-</div>
-</div>
-</div>
-</section>
-
 <sc-if value="{{ igOn }}" hint-placeholder-val="{{ false }}">
-<section id="moments" data-screen-label="Moments" style="position: relative; background: linear-gradient(180deg, var(--mid) 0%, var(--lav) 100%)">
+<section id="moments" data-screen-label="Moments" style="position: relative; background: linear-gradient(180deg, var(--cream) 0%, var(--lav) 100%)">
 <div style="max-width: 1320px; margin: 0 auto; padding: 96px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 10px">
@@ -241,8 +192,37 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 </section>
 </sc-if>
 
+
+<section id="shows" data-sec="" data-sky="lav,mid" data-screen-label="Shows">
+<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">{{ tx.showsH }}</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 12px"><span style="position: relative; width: 12px; height: 12px; display: inline-block"><span data-pulse="" style="position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--ink)"></span><span style="position: absolute; inset: 3px; border-radius: 50%; background: var(--ink)"></span></span>{{ tx.upcoming }}</div>
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
+<sc-for list="{{ upcoming }}" as="s" hint-placeholder-count="1">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: var(--ink)">{{ s.note }}</span></span><span style="display: inline-flex; align-items: baseline; gap: 14px"><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span><sc-if value="{{ s.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ s.link }}" target="_blank" rel="noopener" data-showlink="" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; padding: 4px 12px; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease" style-hover="background: var(--ink); color: var(--butter)">{{ s.linkLabel }} ↗</a></sc-if></span></div>
+</sc-for>
+<sc-if value="{{ noUpcoming }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="font-size: 26px; font-style: italic">{{ tx.nextShow }}</span><span style="font-size: 16px; letter-spacing: 0.08em">{{ tx.tbc }}</span></div>
+</sc-if>
+</div>
+<a href="#booking" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; margin-top: 12px; border-radius: 999px; background: var(--ink); color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease" style-hover="transform: translateY(-3px)">{{ tx.bookPutrika }}</a>
+</div>
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; min-height: 12px">{{ tx.past }}</div>
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
+<sc-for list="{{ past }}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 20px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 45%, transparent)"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 26px"><span style="font-style: italic">{{ s.name }}</span>{{ s.place }}</span><span style="font-size: 16px; color: var(--ink)">{{ s.note }}</span></span><span style="display: inline-flex; align-items: baseline; gap: 14px"><span style="font-size: 16px; letter-spacing: 0.08em">{{ s.when }}</span><sc-if value="{{ s.hasLink }}" hint-placeholder-val="{{ false }}"><a href="{{ s.link }}" target="_blank" rel="noopener" data-showlink="" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: inherit; border: 1.5px solid currentColor; border-radius: 999px; padding: 4px 12px; white-space: nowrap; transition: background 0.25s ease, color 0.25s ease" style-hover="background: var(--ink); color: var(--butter)">{{ s.linkLabel }} ↗</a></sc-if></span></div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <sc-if value="{{ shopOn }}" hint-placeholder-val="{{ false }}">
-<section id="shop" data-screen-label="Shop" style="position: relative; background: linear-gradient(180deg, var(--lav) 0%, var(--mid) 100%)">
+<section id="shop" data-screen-label="Shop" style="position: relative; background: linear-gradient(180deg, var(--mid) 0%, var(--cream) 100%)">
 <div style="max-width: 1320px; margin: 0 auto; padding: 96px 24px 104px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
 <h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">{{ tx.shopH }}</h2>
@@ -297,6 +277,31 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 </div>
 </sc-if>
 </sc-if>
+
+<section id="about" data-sec="" data-sky="cream,butter" data-screen-label="About">
+<div style="max-width: 1320px; margin: 0 auto; padding: 120px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 80px">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">{{ tx.about }}</div>
+<p data-bio="" style="margin: 0; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.15; max-width: 18em; text-wrap: pretty"><sc-for list="{{ bioWords }}" as="w" hint-placeholder-count="9"><span data-word="" style="font-style: {{ w.fs }}">{{ w.t }}</span></sc-for></p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 64px">
+<p data-reveal="" style="margin: 0; font-size: 18px; color: var(--ink); max-width: 34em; font-size: 20px; line-height: 1.6; text-wrap: pretty"><span style="font-style: italic">Putrika</span>{{ tx.bio }}</p>
+<div data-reveal="" style="display: flex; flex-direction: column; gap: 40px">
+<div style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent)">{{ tx.press }}</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<blockquote style="margin: 0; font-size: 28px; font-style: italic; line-height: 1.3; text-wrap: pretty">&ldquo;Putrika, this is pretty epic! Love the fusion of sounds and feelings&rdquo;</blockquote>
+<figcaption style="font-size: 16px">{{ tx.quoteBy }} <span style="font-style: italic">Celestial</span></figcaption>
+</figure>
+<div style="display: flex; flex-direction: column; border-top: 1.5px solid var(--ink)">
+<a href="https://www.club77.com.au/news/putrika-article-club77" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">Get To Know: Putrika</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">Club 77</span></a>
+<a href="https://www.abc.net.au/triplejunearthed/artist/putrika" style="display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; padding: 12px 8px; box-sizing: border-box; border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); text-decoration: none; font-size: 22px; transition: padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)" style-hover="padding-left: 24px"><span style="font-style: italic">{{ tx.artistProfile }}</span><span style="font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent)">triple j Unearthed</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
 
 <section id="booking" data-sec="" data-night="" data-sky="ink,ink" data-screen-label="Booking" style="position: relative; overflow: hidden; color: var(--butter); background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 0%, transparent) 0px, var(--ink) 240px)">
 <div data-moon="" aria-hidden="true" style="position: absolute; right: 8%; top: 140px; width: clamp(140px, 18vw, 260px); aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle at 36% 34%, var(--cream) 0%, var(--butter) 55%, var(--butter) 100%); box-shadow: 0 0 120px 30px color-mix(in srgb, var(--butter) 18%, transparent); will-change: transform"></div>
@@ -568,8 +573,31 @@ class Component extends DCLogic {
 
   componentDidUpdate() { this.tracksDirty = true; this.syncImgs(); this.syncVid(); }
 
+  addEventSchema() {
+    try {
+      if (document.getElementById('putrika-events')) return;
+      const today = new Date().toISOString().slice(0, 10);
+      const up = Component.SHOWS.filter(x => x.date >= today && x.when.length > 4);
+      if (!up.length) return;
+      const artist = { '@type': 'MusicGroup', name: 'Putrika', url: 'https://putrika.net/' };
+      const events = up.map(x => {
+        const town = (x.place || '').replace(/^,\s*/, '');
+        const ev = { '@type': 'MusicEvent', name: 'Putrika at ' + x.name + (town ? ', ' + town : ''), startDate: x.date,
+          eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          location: { '@type': 'Place', name: x.name, address: { '@type': 'PostalAddress', addressLocality: town || x.name, addressRegion: 'NSW', addressCountry: 'AU' } },
+          performer: artist, organizer: artist, image: ['https://putrika.net/brand/og-image.png'], description: (x.note || 'Live') + ' by Putrika.',
+          url: x.link || 'https://putrika.net/#shows' };
+        return ev;
+      });
+      const sc = document.createElement('script'); sc.type = 'application/ld+json'; sc.id = 'putrika-events';
+      sc.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': events });
+      document.head.appendChild(sc);
+    } catch (e) {}
+  }
+
   componentDidMount() {
     this.loadIg();
+    this.addEventSchema();
     if (Component.shopParam().get('order')) { this.saveCart({}); this.setState({ cart: {} }); }
     const root = this.rootRef.current;
     if (!root) return;
@@ -858,7 +886,7 @@ class Component extends DCLogic {
   ];
 
 
-  static TX = {"en": {"music": "Music", "about": "About", "shows": "Shows", "booking": "Booking", "bookings": "Bookings", "press": "Press", "showsH": "shows", "upcoming": "Upcoming", "eventLink": "Event", "shop": "Shop", "shopH": "shop", "shopNote": "Small things, posted by Putrika from the Illawarra. Australia only for now.", "addToBag": "Add to bag", "added": "Added ✓", "bag": "Your bag", "close": "Close", "subtotal": "Subtotal", "shipNote": "Postage is added at checkout: $6 for magnets and seeds, $14 if there is a tote.", "checkout": "Checkout", "loading": "Loading…", "thanks": "Thank you! Your order is in, and a receipt is on its way to your email. Putrika posts orders within a few days.", "comingSoon": "Checkout opens soon.", "seedNote": "Seed packets can’t be posted to WA or Tasmania (quarantine rules).", "momentsH": "moments", "watchIg": "Watch on Instagram", "latestIg": "Latest from Instagram", "followIg": "Follow @putrikamusic", "prevM": "Previous moment", "nextM": "Next moment", "playing": "Playing", "soundOn": "Turn sound on", "soundOff": "Turn sound off", "past": "Past", "nextShow": "Next show", "tbc": "TBC", "bookPutrika": "Book Putrika", "bookingPress": "Booking and press", "getInTouch": "get in touch", "pressKit": "Download press kit [PDF]", "credit": "website design", "merch": "Merch on Bandcamp", "artistProfile": "Artist profile", "tag1": "alt-soul electronica /", "tag2": "from java island to dharawal country", "coverArt": "cover art:", "quoteBy": "Anika Luna, triple j, on", "listenTo": "Listen to ", "buyBandcamp": "Buy on Bandcamp", "goToMusic": ": go to music", "bio": " is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots."}, "id": {"music": "Musik", "about": "Tentang", "shows": "Pertunjukan", "booking": "Booking", "bookings": "Booking", "press": "Pers", "showsH": "pertunjukan", "upcoming": "Mendatang", "eventLink": "Acara", "shop": "Toko", "shopH": "toko", "shopNote": "Barang-barang kecil, dikirim Putrika dari Illawarra. Untuk sementara hanya ke Australia.", "addToBag": "Masukkan ke tas", "added": "Ditambahkan ✓", "bag": "Tas kamu", "close": "Tutup", "subtotal": "Subtotal", "shipNote": "Ongkos kirim ditambahkan saat bayar: $6 untuk magnet dan benih, $14 jika ada tote.", "checkout": "Bayar", "loading": "Memuat…", "thanks": "Terima kasih! Pesananmu sudah masuk, dan tanda terima dikirim ke emailmu. Putrika mengirim pesanan dalam beberapa hari.", "comingSoon": "Pembayaran segera dibuka.", "seedNote": "Paket benih tidak bisa dikirim ke WA atau Tasmania (aturan karantina).", "momentsH": "momen", "watchIg": "Tonton di Instagram", "latestIg": "Terbaru dari Instagram", "followIg": "Ikuti @putrikamusic", "prevM": "Momen sebelumnya", "nextM": "Momen berikutnya", "playing": "Diputar", "soundOn": "Nyalakan suara", "soundOff": "Matikan suara", "past": "Sebelumnya", "nextShow": "Pertunjukan berikutnya", "tbc": "Segera diumumkan", "bookPutrika": "Booking Putrika", "bookingPress": "Booking dan pers", "getInTouch": "hubungi putrika", "pressKit": "Unduh press kit [PDF]", "credit": "desain situs", "merch": "Merchandise di Bandcamp", "artistProfile": "Profil artis", "tag1": "alt-soul electronica /", "tag2": "dari pulau jawa ke tanah dharawal", "coverArt": "sampul:", "quoteBy": "Anika Luna, triple j, tentang", "listenTo": "Dengarkan ", "buyBandcamp": "Beli di Bandcamp", "goToMusic": ": ke bagian musik", "bio": " adalah penyanyi, penulis lagu, produser musik elektronik, dan selector kelahiran Jakarta yang berbasis di Australia. Kini tinggal di tanah Dharawal/Illawarra setelah lebih dari satu dekade menetap di Tanah Gadigal (Sydney), ia menciptakan warna musik khas yang disebut alt-soul electronica. Musiknya memadukan vokal berlapis, synth eksperimental, ritme perkusif, dan lanskap suara ambient, dengan pengaruh kuat dari musik elektronik Barat serta akar tradisi Indonesianya."}};
+  static TX = {"en": {"music": "Music", "about": "About", "shows": "Shows", "booking": "Booking", "bookings": "Bookings", "press": "Press", "showsH": "shows", "upcoming": "Upcoming", "eventLink": "Event", "shop": "Shop", "shopH": "shop", "shopNote": "Small things, posted by Putrika from the Illawarra. Australia only for now.", "addToBag": "Add to bag", "added": "Added ✓", "bag": "Your bag", "close": "Close", "subtotal": "Subtotal", "shipNote": "Postage is added at checkout: $6 for magnets and seeds, $14 if there is a tote.", "checkout": "Checkout", "loading": "Loading…", "thanks": "Thank you! Your order is in, and a receipt is on its way to your email. Putrika posts orders within a few days.", "comingSoon": "Checkout opens soon.", "seedNote": "Seed packets can’t be posted to WA or Tasmania (quarantine rules).", "momentsH": "moments", "momentsNav": "Moments", "watchIg": "Watch on Instagram", "latestIg": "Latest from Instagram", "followIg": "Follow @putrikamusic", "prevM": "Previous moment", "nextM": "Next moment", "playing": "Playing", "soundOn": "Turn sound on", "soundOff": "Turn sound off", "past": "Past", "nextShow": "Next show", "tbc": "TBC", "bookPutrika": "Book Putrika", "bookingPress": "Booking and press", "getInTouch": "get in touch", "pressKit": "Download press kit [PDF]", "credit": "website design", "merch": "Merch on Bandcamp", "artistProfile": "Artist profile", "tag1": "alt-soul electronica /", "tag2": "from java island to dharawal country", "coverArt": "cover art:", "quoteBy": "Anika Luna, triple j, on", "listenTo": "Listen to ", "buyBandcamp": "Buy on Bandcamp", "goToMusic": ": go to music", "bio": " is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots."}, "id": {"music": "Musik", "about": "Tentang", "shows": "Pertunjukan", "booking": "Booking", "bookings": "Booking", "press": "Pers", "showsH": "pertunjukan", "upcoming": "Mendatang", "eventLink": "Acara", "shop": "Toko", "shopH": "toko", "shopNote": "Barang-barang kecil, dikirim Putrika dari Illawarra. Untuk sementara hanya ke Australia.", "addToBag": "Masukkan ke tas", "added": "Ditambahkan ✓", "bag": "Tas kamu", "close": "Tutup", "subtotal": "Subtotal", "shipNote": "Ongkos kirim ditambahkan saat bayar: $6 untuk magnet dan benih, $14 jika ada tote.", "checkout": "Bayar", "loading": "Memuat…", "thanks": "Terima kasih! Pesananmu sudah masuk, dan tanda terima dikirim ke emailmu. Putrika mengirim pesanan dalam beberapa hari.", "comingSoon": "Pembayaran segera dibuka.", "seedNote": "Paket benih tidak bisa dikirim ke WA atau Tasmania (aturan karantina).", "momentsH": "momen", "momentsNav": "Momen", "watchIg": "Tonton di Instagram", "latestIg": "Terbaru dari Instagram", "followIg": "Ikuti @putrikamusic", "prevM": "Momen sebelumnya", "nextM": "Momen berikutnya", "playing": "Diputar", "soundOn": "Nyalakan suara", "soundOff": "Matikan suara", "past": "Sebelumnya", "nextShow": "Pertunjukan berikutnya", "tbc": "Segera diumumkan", "bookPutrika": "Booking Putrika", "bookingPress": "Booking dan pers", "getInTouch": "hubungi putrika", "pressKit": "Unduh press kit [PDF]", "credit": "desain situs", "merch": "Merchandise di Bandcamp", "artistProfile": "Profil artis", "tag1": "alt-soul electronica /", "tag2": "dari pulau jawa ke tanah dharawal", "coverArt": "sampul:", "quoteBy": "Anika Luna, triple j, tentang", "listenTo": "Dengarkan ", "buyBandcamp": "Beli di Bandcamp", "goToMusic": ": ke bagian musik", "bio": " adalah penyanyi, penulis lagu, produser musik elektronik, dan selector kelahiran Jakarta yang berbasis di Australia. Kini tinggal di tanah Dharawal/Illawarra setelah lebih dari satu dekade menetap di Tanah Gadigal (Sydney), ia menciptakan warna musik khas yang disebut alt-soul electronica. Musiknya memadukan vokal berlapis, synth eksperimental, ritme perkusif, dan lanskap suara ambient, dengan pengaruh kuat dari musik elektronik Barat serta akar tradisi Indonesianya."}};
   static BIO_WORDS = {"en": [["Jakarta-born, ", 0], ["Dharawal ", 0], ["country-based ", 0], ["singer, ", 1], ["songwriter, ", 1], ["and ", 0], ["electronic ", 1], ["music ", 1], ["producer.", 1]], "id": [["Penyanyi, ", 1], ["penulis ", 1], ["lagu, ", 1], ["dan ", 0], ["produser ", 1], ["musik ", 1], ["elektronik ", 1], ["kelahiran ", 0], ["Jakarta ", 0], ["yang ", 0], ["berbasis ", 0], ["di ", 0], ["tanah ", 0], ["Dharawal.", 0]]};
   static ID_MAP = {"New album": "Album baru", "Single": "Single", "EP": "EP", "DJ set": "Set DJ", "Wildflower bunch magnet": "Magnet buket bunga liar", "Celestial tote": "Tas tote Celestial", "Billy buttons seeds": "Benih billy buttons", "About 50 seeds of billy buttons, a golden Australian native wildflower, with sowing notes on the back. Can’t be posted to WA or Tasmania.": "Sekitar 50 benih billy buttons, bunga liar asli Australia berwarna emas, dengan petunjuk menanam di belakang. Tidak bisa dikirim ke WA atau Tasmania.", "A chunky acrylic magnet cut from the Silmara and Rain on Tuesday flowers. About 7.5 cm across.": "Magnet akrilik tebal berbentuk bunga dari sampul Silmara dan Rain on Tuesday. Sekitar 7,5 cm.", "A chunky die-cut magnet cut from the Silmara and Rain on Tuesday flowers. About 9 cm across.": "Magnet tebal berbentuk bunga dari sampul Silmara dan Rain on Tuesday. Sekitar 9 cm.", "Natural cotton tote with the Celestial cover printed on the front.": "Tas tote katun alami dengan sampul Celestial di bagian depan.", "Midnight set, with Mikkapedia & Scruffs": "Set tengah malam, bersama Mikkapedia & Scruffs", "Live": "Live", "Club set": "Set klub", "Live set": "Set live", "With Jhassic": "Bersama Jhassic", "Acoustic set with Kyati": "Set akustik bersama Kyati", "DJ set, Washing Machine Disco": "Set DJ, Washing Machine Disco", "Spring Sessions live set, with Lewa (DJ). Free entry.": "Set live Spring Sessions, bersama Lewa (DJ). Gratis.", "Wanita album launch": "Peluncuran album Wanita", "Featured in Netflix’s Heartbreak High.": "Tampil di serial Netflix Heartbreak High."};
   static ID_MONTHS = { January: 'Januari', February: 'Februari', March: 'Maret', May: 'Mei', June: 'Juni', July: 'Juli', August: 'Agustus', October: 'Oktober', December: 'Desember', Oct: 'Okt', Aug: 'Agu', Dec: 'Des' };
