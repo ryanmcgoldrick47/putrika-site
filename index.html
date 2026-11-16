@@ -52,6 +52,16 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 [data-bar]{transition:margin-top .45s cubic-bezier(.3,1.6,.5,1),flex-grow .4s ease,box-shadow .3s ease!important}
 [data-bar][aria-pressed="true"]{flex:1.7 1 0!important;margin-top:-38px!important;border:1.5px solid var(--ink)!important;border-bottom:0!important;border-radius:6px 6px 0 0;box-shadow:0 -12px 22px -10px rgba(0,0,0,.55)!important;z-index:2}
 [data-shelf-label]{display:none!important}}
+
+[data-mstack]{width:400px;height:500px;margin:56px 130px 48px 0}
+[data-mvid]{right:-130px;bottom:-48px;width:220px;height:275px}
+@keyframes igdrift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes igrec{0%,100%{opacity:1}50%{opacity:.25}}
+[data-igstrip]{animation:igdrift 70s linear infinite}
+[data-igstrip]:hover,[data-igstrip]:focus-within{animation-play-state:paused}
+[data-live]{animation:igrec 1.6s ease-in-out infinite}
+@media (max-width:720px){[data-mrow]{gap:28px!important}[data-mstack]{width:min(280px,70vw);height:min(350px,87.5vw);margin:44px auto 40px}[data-mvid]{right:-22px;bottom:-36px;width:128px;height:160px}}
+@media (prefers-reduced-motion: reduce){[data-igstrip],[data-live]{animation:none}}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif; color: var(--ink); font-size: 18px; line-height: 1.55; position: relative; overflow-x: clip">
@@ -170,6 +180,58 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 </div>
 </section>
 
+<sc-if value="{{ igOn }}" hint-placeholder-val="{{ false }}">
+<section id="moments" data-screen-label="Moments" style="position: relative; background: linear-gradient(180deg, var(--mid) 0%, var(--lav) 100%)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 96px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a href="{{ igProfile }}" target="_blank" rel="noopener" style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: inherit">@putrikamusic</a>
+<h2 data-reveal="" style="margin: 0; font-size: clamp(64px, 9vw, 132px); font-weight: 400; font-style: italic; line-height: 0.9">{{ tx.momentsH }}</h2>
+</div>
+</div>
+<sc-if value="{{ igHasMoments }}" hint-placeholder-val="{{ false }}">
+<div data-mrow="" style="display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+<div data-mstack="" style="position: relative; flex: 0 0 auto; perspective: 1400px">
+<sc-for list="{{ igCards }}" as="c" hint-placeholder-count="3">
+<div style="position: absolute; inset: 0; transform-origin: 50% 0%; transition: transform 0.7s cubic-bezier(.2,.8,.2,1), opacity 0.5s ease, filter 0.5s ease; transform: {{ c.tf }}; opacity: {{ c.op }}; z-index: {{ c.z }}; filter: {{ c.filter }}">
+<button type="button" onClick="{{ c.pick }}" aria-label="{{ c.label }}" tabindex="{{ c.tab }}" style="position: absolute; inset: 0; padding: 0; border-radius: 18px; overflow: hidden; border: 1.5px solid var(--ink); background: var(--ink); cursor: pointer; box-shadow: 0 30px 60px -28px rgba(43,31,74,.65)"><img data-ci="ig" data-src="{{ c.poster }}" alt="{{ c.alt }}" style="opacity: 0; transition: opacity 0.4s ease; width: 100%; height: 100%; object-fit: cover; display: block"></button>
+</div>
+</sc-for>
+<div data-mvid="" style="position: absolute; z-index: 20; border-radius: 16px; overflow: hidden; border: 1.5px solid var(--ink); background: var(--ink); transform: rotate(4deg); box-shadow: 0 26px 50px -20px rgba(43,31,74,.7)">
+<video data-igv="" data-src="{{ igCur.video }}" data-poster="{{ igCur.videoThumb }}" muted="" loop="" playsinline="" preload="metadata" aria-label="{{ igCur.videoLabel }}" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<span style="position: absolute; left: 10px; top: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(43,31,74,.78); color: var(--cream); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase"><span data-live="" aria-hidden="true" style="width: 6px; height: 6px; border-radius: 50%; background: var(--butter); display: inline-block"></span>{{ tx.playing }}</span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 15px; letter-spacing: 0.2em">{{ igCount }} · {{ igCur.when }}</span>
+<p style="margin: 0; max-width: 30ch; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.15; font-style: italic">{{ igCur.caption }}</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<a href="{{ igCur.url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: var(--ink); color: var(--butter); font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none">{{ tx.watchIg }} ↗</a>
+<sc-if value="{{ igMany }}" hint-placeholder-val="{{ true }}">
+<span style="display: inline-flex; gap: 10px">
+<button type="button" onClick="{{ igPrev }}" aria-label="{{ tx.prevM }}" style="width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 15l-6-6-6 6"></path></svg></button>
+<button type="button" onClick="{{ igNext }}" aria-label="{{ tx.nextM }}" style="width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--ink); background: var(--ink); color: var(--butter); cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+</span>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); padding: 16px 0; overflow: hidden">
+<div data-igstrip="" style="display: flex; gap: 14px; width: max-content">
+<sc-for list="{{ igStrip }}" as="p" hint-placeholder-count="12">
+<a href="{{ p.url }}" target="_blank" rel="noopener" aria-label="{{ p.caption }}" tabindex="{{ p.tab }}" style="position: relative; display: block; width: 132px; height: 165px; border-radius: 12px; overflow: hidden; border: 1.5px solid var(--ink); background: var(--ink); flex: 0 0 auto"><img data-ci="ig" data-src="{{ p.image }}" alt="" style="opacity: 0; transition: opacity 0.4s ease; width: 100%; height: 100%; object-fit: cover; display: block"></a>
+</sc-for>
+</div>
+</div>
+<div style="max-width: 1320px; margin: 0 auto; padding: 16px 24px 24px; box-sizing: border-box; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase">
+<span>{{ tx.latestIg }}</span>
+<a href="{{ igProfile }}" target="_blank" rel="noopener" style="color: inherit">{{ tx.followIg }} ↗</a>
+</div>
+</section>
+</sc-if>
+
 <section id="booking" data-sec="" data-night="" data-sky="ink,ink" data-screen-label="Booking" style="position: relative; overflow: hidden; color: var(--butter); background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 0%, transparent) 0px, var(--ink) 240px)">
 <div data-moon="" aria-hidden="true" style="position: absolute; right: 8%; top: 140px; width: clamp(140px, 18vw, 260px); aspect-ratio: 1 / 1; border-radius: 50%; background: radial-gradient(circle at 36% 34%, var(--cream) 0%, var(--butter) 55%, var(--butter) 100%); box-shadow: 0 0 120px 30px color-mix(in srgb, var(--butter) 18%, transparent); will-change: transform"></div>
 <div style="position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(320px, 34vw, 440px) 24px 104px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 64px; align-items: end">
@@ -242,7 +304,21 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 <script type="text/x-dc" data-dc-script data-props="{&quot;flowerCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;petals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;skyShift&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;autoPalette&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Discography&quot;}}">
 class Component extends DCLogic {
   rootRef = React.createRef();
-  state = { rel: Component.initialRel(), hover: null, dog: false, lang: Component.initialLang() };
+  state = { rel: Component.initialRel(), hover: null, dog: false, lang: Component.initialLang(), ig: null, mIdx: 0 };
+
+  loadIg() {
+    fetch('ig/feed.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => { if (d && d.posts && d.posts.length) this.setState({ ig: d }); }).catch(() => {});
+  }
+
+  syncVid() {
+    const root = this.rootRef.current; if (!root) return;
+    root.querySelectorAll('video[data-igv]').forEach(v => {
+      v.muted = true; v.defaultMuted = true; v.playsInline = true; v.loop = true;
+      const want = v.dataset.src, poster = v.dataset.poster;
+      if (poster && poster.indexOf('{{') < 0 && v.getAttribute('poster') !== poster) v.setAttribute('poster', poster);
+      if (want && want.indexOf('{{') < 0 && v.getAttribute('src') !== want) { v.setAttribute('src', want); if (!this.reduce) { const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); } }
+    });
+  }
   static initialLang() { try { return new URLSearchParams(location.search).get('lang') === 'id' ? 'id' : 'en'; } catch (e) { return 'en'; } }
   toggleLang = () => { const lang = this.state.lang === 'id' ? 'en' : 'id'; this.langDirty = true; document.documentElement.lang = lang; this.setState({ lang }); };
   auto = {};
@@ -384,9 +460,10 @@ class Component extends DCLogic {
     });
   }
 
-  componentDidUpdate() { this.tracksDirty = true; this.syncImgs(); }
+  componentDidUpdate() { this.tracksDirty = true; this.syncImgs(); this.syncVid(); }
 
   componentDidMount() {
+    this.loadIg();
     const root = this.rootRef.current;
     if (!root) return;
     this.syncImgs();
@@ -674,7 +751,7 @@ class Component extends DCLogic {
   ];
 
 
-  static TX = {"en": {"music": "Music", "about": "About", "shows": "Shows", "booking": "Booking", "bookings": "Bookings", "press": "Press", "showsH": "shows", "upcoming": "Upcoming", "eventLink": "Event", "past": "Past", "nextShow": "Next show", "tbc": "TBC", "bookPutrika": "Book Putrika", "bookingPress": "Booking and press", "getInTouch": "get in touch", "pressKit": "Download press kit [PDF]", "credit": "website design", "merch": "Merch on Bandcamp", "artistProfile": "Artist profile", "tag1": "alt-soul electronica /", "tag2": "from java island to dharawal country", "coverArt": "cover art:", "quoteBy": "Anika Luna, triple j, on", "listenTo": "Listen to ", "buyBandcamp": "Buy on Bandcamp", "goToMusic": ": go to music", "bio": " is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots."}, "id": {"music": "Musik", "about": "Tentang", "shows": "Pertunjukan", "booking": "Booking", "bookings": "Booking", "press": "Pers", "showsH": "pertunjukan", "upcoming": "Mendatang", "eventLink": "Acara", "past": "Sebelumnya", "nextShow": "Pertunjukan berikutnya", "tbc": "Segera diumumkan", "bookPutrika": "Booking Putrika", "bookingPress": "Booking dan pers", "getInTouch": "hubungi putrika", "pressKit": "Unduh press kit [PDF]", "credit": "desain situs", "merch": "Merchandise di Bandcamp", "artistProfile": "Profil artis", "tag1": "alt-soul electronica /", "tag2": "dari pulau jawa ke tanah dharawal", "coverArt": "sampul:", "quoteBy": "Anika Luna, triple j, tentang", "listenTo": "Dengarkan ", "buyBandcamp": "Beli di Bandcamp", "goToMusic": ": ke bagian musik", "bio": " adalah penyanyi, penulis lagu, produser musik elektronik, dan selector kelahiran Jakarta yang berbasis di Australia. Kini tinggal di tanah Dharawal/Illawarra setelah lebih dari satu dekade menetap di Tanah Gadigal (Sydney), ia menciptakan warna musik khas yang disebut alt-soul electronica. Musiknya memadukan vokal berlapis, synth eksperimental, ritme perkusif, dan lanskap suara ambient, dengan pengaruh kuat dari musik elektronik Barat serta akar tradisi Indonesianya."}};
+  static TX = {"en": {"music": "Music", "about": "About", "shows": "Shows", "booking": "Booking", "bookings": "Bookings", "press": "Press", "showsH": "shows", "upcoming": "Upcoming", "eventLink": "Event", "momentsH": "moments", "watchIg": "Watch on Instagram", "latestIg": "Latest from Instagram", "followIg": "Follow @putrikamusic", "prevM": "Previous moment", "nextM": "Next moment", "playing": "Playing", "past": "Past", "nextShow": "Next show", "tbc": "TBC", "bookPutrika": "Book Putrika", "bookingPress": "Booking and press", "getInTouch": "get in touch", "pressKit": "Download press kit [PDF]", "credit": "website design", "merch": "Merch on Bandcamp", "artistProfile": "Artist profile", "tag1": "alt-soul electronica /", "tag2": "from java island to dharawal country", "coverArt": "cover art:", "quoteBy": "Anika Luna, triple j, on", "listenTo": "Listen to ", "buyBandcamp": "Buy on Bandcamp", "goToMusic": ": go to music", "bio": " is a Jakarta-born, Australia-based singer, songwriter, electronic music producer, and selector. Currently based in Dharawal/Illawarra country after spending over a decade living on Gadigal Land (Sydney), she creates a signature sound described as alt-soul electronica. Her music seamlessly blends multi-layered vocals, experimental synths, percussive rhythms, and ambient soundscapes, deeply influenced by both Western electronic music and her traditional Indonesian roots."}, "id": {"music": "Musik", "about": "Tentang", "shows": "Pertunjukan", "booking": "Booking", "bookings": "Booking", "press": "Pers", "showsH": "pertunjukan", "upcoming": "Mendatang", "eventLink": "Acara", "momentsH": "momen", "watchIg": "Tonton di Instagram", "latestIg": "Terbaru dari Instagram", "followIg": "Ikuti @putrikamusic", "prevM": "Momen sebelumnya", "nextM": "Momen berikutnya", "playing": "Diputar", "past": "Sebelumnya", "nextShow": "Pertunjukan berikutnya", "tbc": "Segera diumumkan", "bookPutrika": "Booking Putrika", "bookingPress": "Booking dan pers", "getInTouch": "hubungi putrika", "pressKit": "Unduh press kit [PDF]", "credit": "desain situs", "merch": "Merchandise di Bandcamp", "artistProfile": "Profil artis", "tag1": "alt-soul electronica /", "tag2": "dari pulau jawa ke tanah dharawal", "coverArt": "sampul:", "quoteBy": "Anika Luna, triple j, tentang", "listenTo": "Dengarkan ", "buyBandcamp": "Beli di Bandcamp", "goToMusic": ": ke bagian musik", "bio": " adalah penyanyi, penulis lagu, produser musik elektronik, dan selector kelahiran Jakarta yang berbasis di Australia. Kini tinggal di tanah Dharawal/Illawarra setelah lebih dari satu dekade menetap di Tanah Gadigal (Sydney), ia menciptakan warna musik khas yang disebut alt-soul electronica. Musiknya memadukan vokal berlapis, synth eksperimental, ritme perkusif, dan lanskap suara ambient, dengan pengaruh kuat dari musik elektronik Barat serta akar tradisi Indonesianya."}};
   static BIO_WORDS = {"en": [["Jakarta-born, ", 0], ["Dharawal ", 0], ["country-based ", 0], ["singer, ", 1], ["songwriter, ", 1], ["and ", 0], ["electronic ", 1], ["music ", 1], ["producer.", 1]], "id": [["Penyanyi, ", 1], ["penulis ", 1], ["lagu, ", 1], ["dan ", 0], ["produser ", 1], ["musik ", 1], ["elektronik ", 1], ["kelahiran ", 0], ["Jakarta ", 0], ["yang ", 0], ["berbasis ", 0], ["di ", 0], ["tanah ", 0], ["Dharawal.", 0]]};
   static ID_MAP = {"New album": "Album baru", "Single": "Single", "EP": "EP", "DJ set": "Set DJ", "Midnight set, with Mikkapedia & Scruffs": "Set tengah malam, bersama Mikkapedia & Scruffs", "Live": "Live", "Club set": "Set klub", "Live set": "Set live", "With Jhassic": "Bersama Jhassic", "Acoustic set with Kyati": "Set akustik bersama Kyati", "DJ set, Washing Machine Disco": "Set DJ, Washing Machine Disco", "Spring Sessions live set, with Lewa (DJ). Free entry.": "Set live Spring Sessions, bersama Lewa (DJ). Gratis.", "Wanita album launch": "Peluncuran album Wanita", "Featured in Netflix’s Heartbreak High.": "Tampil di serial Netflix Heartbreak High."};
   static ID_MONTHS = { January: 'Januari', February: 'Februari', March: 'Maret', May: 'Mei', June: 'Juni', July: 'Juli', August: 'Agustus', October: 'Oktober', December: 'Desember', Oct: 'Okt', Aug: 'Agu', Dec: 'Des' };
@@ -711,9 +788,18 @@ class Component extends DCLogic {
         pressed: on ? 'true' : 'false', w: h ? 64 : on ? 30 : 16, labelOpacity: h ? 1 : 0,
         shadow: on ? 'inset 0 0 0 2px var(--ink)' : 'none' };
     });
-    return { rootRef: this.rootRef, upcoming: upcoming.map(locShow), past: past.map(locShow), tx, toggleLang: this.toggleLang, langLabel: L === 'id' ? 'English' : 'Bahasa',
+    const ig = this.state.ig, MS = ig ? (ig.moments || []) : [], mn = MS.length, mi = mn ? this.state.mIdx % mn : 0;
+    const fmtD = d => { if (!d) return ''; const t = new Date(d + 'T00:00:00'); return loc(t.getDate() + ' ' + ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][t.getMonth()] + ' ' + t.getFullYear()); };
+    const igCards = MS.map((m, i) => { const d = (i - mi + mn) % mn; return { poster: m.poster, alt: m.caption || 'Gig poster', label: m.caption || 'Moment', tab: d === 0 ? '-1' : '0', pick: () => this.setState({ mIdx: i }),
+      tf: d === 0 ? 'translateY(0) scale(1) rotateX(0deg)' : 'translateY(' + (-d * 26) + 'px) scale(' + (1 - d * 0.06).toFixed(2) + ') rotateX(' + (d * 9) + 'deg)', op: d > 3 ? 0 : (1 - d * 0.12).toFixed(2), z: 10 - d, filter: d ? 'saturate(.6) brightness(.85)' : 'none' }; });
+    const mc = mn ? MS[mi] : {};
+    const igPosts = ig ? ig.posts || [] : [];
+    const igStrip = igPosts.concat(igPosts).map((p, i) => Object.assign({}, p, { tab: i < igPosts.length ? '0' : '-1' }));
+    const igVals = { igOn: !!ig, igHasMoments: mn > 0, igMany: mn > 1, igCards, igCur: Object.assign({}, mc, { when: fmtD(mc.date), videoLabel: (mc.caption || '') + ' (video)' }), igCount: String(mi + 1).padStart(2, '0') + ' / ' + String(mn).padStart(2, '0'),
+      igStrip, igProfile: (ig && ig.profile) || 'https://www.instagram.com/putrikamusic/', igNext: () => this.setState({ mIdx: (mi + 1) % mn }), igPrev: () => this.setState({ mIdx: (mi - 1 + mn) % mn }) };
+    return Object.assign(igVals, { rootRef: this.rootRef, upcoming: upcoming.map(locShow), past: past.map(locShow), tx, toggleLang: this.toggleLang, langLabel: L === 'id' ? 'English' : 'Bahasa',
       bioWords: Component.BIO_WORDS[L].map(w => ({ t: w[0], fs: w[1] ? 'italic' : 'normal' })), noUpcoming: upcoming.length === 0, bookEmail, bookMailto: 'mailto:' + bookEmail,
-      rel, tracks, marquee: base.concat(base), solidLinks, outlineLinks, shelf, dogOpen: this.state.dog };
+      rel, tracks, marquee: base.concat(base), solidLinks, outlineLinks, shelf, dogOpen: this.state.dog });
   }
 }
 </script>
