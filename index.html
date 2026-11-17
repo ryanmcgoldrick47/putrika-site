@@ -26,7 +26,7 @@
 <x-dc>
 
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Instrument+Sans:wght@400..600&display=swap">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -65,6 +65,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 
 [data-bagbtn]{left:20px;bottom:20px}
 [data-screen-label=Hero]{--pw:clamp(560px,48vw,960px)}
+h1,h1 *,h2,h2 *,[data-bio],[data-bio] *,[data-marquee],[data-marquee] *,[style*="font-style: italic"],[style*="font-style: italic"] *{font-family:'Bodoni Moda','Didot','Bodoni MT',Georgia,serif}
 [data-dph]{position:absolute;left:calc(var(--pw) * -0.3);bottom:0;width:var(--pw);aspect-ratio:1/1;z-index:0;pointer-events:none;opacity:.62}
 @media (min-width:900px){
  #top{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important}
@@ -86,7 +87,7 @@ body.flower-cursor,body.flower-cursor a,body.flower-cursor button{cursor:none}
 @media (max-width:720px){[data-mtrack]{display:none}[data-mmob]{display:block}}
 </style>
 </helmet>
-<div ref="{{ rootRef }}" style="font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif; color: var(--ink); font-size: 18px; line-height: 1.55; position: relative; overflow-x: clip">
+<div ref="{{ rootRef }}" style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: var(--ink); font-size: 18px; line-height: 1.55; position: relative; overflow-x: clip">
 
 <div data-sky="" aria-hidden="true" style="position: fixed; inset: 0; z-index: 0; background: linear-gradient(180deg, var(--lav), var(--butter)); pointer-events: none"></div>
 
