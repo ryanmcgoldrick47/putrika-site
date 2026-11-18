@@ -1,7 +1,15 @@
 {
- "updated": "2026-11-17T02:30:29+00:00",
+ "updated": "2026-11-18T01:40:07+00:00",
  "profile": "https://www.instagram.com/putrikamusic/",
  "posts": [
+  {
+   "id": "18027288431928210",
+   "url": "https://www.instagram.com/p/Df2D25-FAcj/",
+   "caption": "\"Inul Chill_V2\" - Putrika's chill version of Goyang Inul by Inul Daratista.",
+   "date": "2026-11-17",
+   "type": "carousel_album",
+   "image": "ig/media/18004036902034316.jpg"
+  },
   {
    "id": "17887191882688586",
    "url": "https://www.instagram.com/p/DfWkmn-FH1O/",
@@ -91,17 +99,20 @@
    "date": "2025-11-24",
    "type": "carousel_album",
    "image": "ig/media/17946828954063446.jpg"
-  },
-  {
-   "id": "18122796859519717",
-   "url": "https://www.instagram.com/p/DRODwUkk2Wo/",
-   "caption": "Almost 2 months since 'Wanita' is out. Thank you for giving it a listen 💕",
-   "date": "2025-11-19",
-   "type": "carousel_album",
-   "image": "ig/media/18078514885903581.jpg"
   }
  ],
  "moments": [
+  {
+   "id": "18027288431928210",
+   "url": "https://www.instagram.com/p/Df2D25-FAcj/",
+   "caption": "\"Inul Chill_V2\" - Putrika's chill version of Goyang Inul by Inul Daratista.",
+   "date": "2026-11-17",
+   "type": "carousel_album",
+   "image": "ig/media/18004036902034316.jpg",
+   "poster": "ig/media/18018627506983992.jpg",
+   "video": "ig/media/18004036902034316.mp4",
+   "videoThumb": "ig/media/18004036902034316_t.jpg"
+  },
   {
    "id": "17887191882688586",
    "url": "https://www.instagram.com/p/DfWkmn-FH1O/",
@@ -178,17 +189,6 @@
    "poster": "ig/media/17946828954063446.jpg",
    "video": "ig/media/18165988504380118.mp4",
    "videoThumb": "ig/media/18165988504380118_t.jpg"
-  },
-  {
-   "id": "18122796859519717",
-   "url": "https://www.instagram.com/p/DRODwUkk2Wo/",
-   "caption": "Almost 2 months since 'Wanita' is out. Thank you for giving it a listen 💕",
-   "date": "2025-11-19",
-   "type": "carousel_album",
-   "image": "ig/media/18078514885903581.jpg",
-   "poster": "ig/media/18078514885903581.jpg",
-   "video": "ig/media/17902052904164052.mp4",
-   "videoThumb": "ig/media/17902052904164052_t.jpg"
   }
  ]
 }
