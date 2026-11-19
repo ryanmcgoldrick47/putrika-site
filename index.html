@@ -713,7 +713,11 @@ class Component extends DCLogic {
           eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
           location: { '@type': 'Place', name: x.name, address: { '@type': 'PostalAddress', addressLocality: town || x.name, addressRegion: 'NSW', addressCountry: 'AU' } },
           performer: artist, organizer: artist, image: ['https://putrika.net/brand/og-image.png'], description: (x.note || 'Live') + ' by Putrika.',
-          url: x.link || 'https://putrika.net/#shows' };
+          url: x.link || 'https://putrika.net/#shows', endDate: x.end || x.date };
+        const free = /free entry/i.test(x.note || '');
+        ev.offers = { '@type': 'Offer', url: x.tickets || x.link || 'https://putrika.net/#shows', availability: 'https://schema.org/InStock' };
+        if (free) { ev.offers.price = 0; ev.offers.priceCurrency = 'AUD'; ev.isAccessibleForFree = true; }
+        if (x.price != null) { ev.offers.price = x.price; ev.offers.priceCurrency = 'AUD'; }
         return ev;
       });
       const sc = document.createElement('script'); sc.type = 'application/ld+json'; sc.id = 'putrika-events';
