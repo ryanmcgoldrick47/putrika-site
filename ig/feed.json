@@ -1,7 +1,15 @@
 {
- "updated": "2026-11-21T00:51:19+00:00",
+ "updated": "2026-11-21T23:50:21+00:00",
  "profile": "https://www.instagram.com/putrikamusic/",
  "posts": [
+  {
+   "id": "17887462218691428",
+   "url": "https://www.instagram.com/p/DgAKCj-HcAV/",
+   "caption": "07/11/2026 - 01:14am club77sydney",
+   "date": "2026-11-21",
+   "type": "carousel_album",
+   "image": "ig/media/18137894557708436.jpg"
+  },
   {
    "id": "18027288431928210",
    "url": "https://www.instagram.com/p/Df2D25-FAcj/",
@@ -91,14 +99,6 @@
    "type": "video",
    "image": "ig/media/18009741119654176.jpg",
    "video": "ig/media/18009741119654176.mp4"
-  },
-  {
-   "id": "17913450834250381",
-   "url": "https://www.instagram.com/p/DRa_w9IE1Ay/",
-   "caption": "Closing duty club77sydney this Friday 28 November 2-5am after casually.ciara 🧚🧚🧚",
-   "date": "2025-11-24",
-   "type": "carousel_album",
-   "image": "ig/media/17946828954063446.jpg"
   }
  ],
  "moments": [
@@ -178,17 +178,6 @@
    "poster": "ig/media/18094320770332263.jpg",
    "video": "ig/media/18333417829223504.mp4",
    "videoThumb": "ig/media/18333417829223504_t.jpg"
-  },
-  {
-   "id": "17913450834250381",
-   "url": "https://www.instagram.com/p/DRa_w9IE1Ay/",
-   "caption": "Closing duty club77sydney this Friday 28 November 2-5am after casually.ciara 🧚🧚🧚",
-   "date": "2025-11-24",
-   "type": "carousel_album",
-   "image": "ig/media/17946828954063446.jpg",
-   "poster": "ig/media/17946828954063446.jpg",
-   "video": "ig/media/18165988504380118.mp4",
-   "videoThumb": "ig/media/18165988504380118_t.jpg"
   }
  ]
 }
