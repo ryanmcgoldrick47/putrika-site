@@ -1006,6 +1006,7 @@ class Component extends DCLogic {
 
   // Add shows here. Upcoming vs past is decided by date automatically; if none upcoming, "Next show TBC" shows.
   // when: shown text; date: YYYY-MM-DD used for sorting (year-only shows use YYYY-12-31).
+  static PAST_FROM = '2025-09-01'; // past shows listed from this date on (older ones kept below for the record)
   static SHOWS = [
     { date: '2026-10-14', when: '14 Oct 2026', name: 'State Library of NSW', place: ', Sydney', note: 'Spring Sessions live set, with Lewa (DJ). Free entry.', link: 'https://www.instagram.com/putrikamusic/reel/Denuy-op3tG/' },
     { date: '2026-11-01', when: '1 Nov 2026', name: 'Great Southern Hotel', place: ', Berry', note: 'Acoustic set with Kyati', link: 'https://www.instagram.com/putrikamusic/p/De_oiRAFDaz/' },
@@ -1045,7 +1046,7 @@ class Component extends DCLogic {
     const today = new Date().toISOString().slice(0, 10);
     const all = Component.SHOWS;
     const upcoming = all.filter(s => s.date >= today).sort((a, b) => a.date.localeCompare(b.date));
-    const past = all.filter(s => s.date < today).sort((a, b) => b.date.localeCompare(a.date));
+    const past = all.filter(s => s.date < today && s.date >= Component.PAST_FROM).sort((a, b) => b.date.localeCompare(a.date));
     const bookEmail = ['bookings', 'putrika.net'].join('@');
     const r = this.rel();
     const L = this.state.lang, tx = Component.TX[L], loc = v => L === 'id' ? Component.toId(v) : v;
