@@ -865,8 +865,13 @@ class Component extends DCLogic {
         const r = secs[k].getBoundingClientRect();
         const t = clamp((c - r.top) / r.height);
         const b = Math.min(k + 1, secs.length - 1);
-        const f = k < secs.length - 1 ? smooth(clamp((t - 0.55) / 0.45)) : 0;
-        const bg = 'linear-gradient(180deg,' + mix(pal[keys[k][0]], pal[keys[b][0]], f) + ',' + mix(pal[keys[k][1]], pal[keys[b][1]], f) + ')';
+        let f = k < secs.length - 1 ? smooth(clamp((t - 0.55) / 0.45)) : 0, from = k, to = b;
+        // Going into the dark Booking section: keep the light sky until About has scrolled up out of the way,
+        // then fade to night only as Booking itself rises from 60% of the screen to the top.
+        const isNight = i => secs[i] && secs[i].hasAttribute('data-night');
+        if (isNight(b) && !isNight(k)) f = 0;
+        if (isNight(k) && k > 0 && !isNight(k - 1)) { from = k - 1; to = k; f = smooth(clamp((vh * 0.6 - secs[k].getBoundingClientRect().top) / (vh * 0.6))); }
+        const bg = 'linear-gradient(180deg,' + mix(pal[keys[from][0]], pal[keys[to][0]], f) + ',' + mix(pal[keys[from][1]], pal[keys[to][1]], f) + ')';
         if (bg !== lastSky) { sky.style.background = bg; lastSky = bg; }
       } else { const bg = rgb(pal.lav); if (bg !== lastSky) { sky.style.background = bg; lastSky = bg; } }
 
