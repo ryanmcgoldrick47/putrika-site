@@ -1,7 +1,15 @@
 {
- "updated": "2026-11-21T23:50:21+00:00",
+ "updated": "2026-11-23T00:21:28+00:00",
  "profile": "https://www.instagram.com/putrikamusic/",
  "posts": [
+  {
+   "id": "18112147046628723",
+   "url": "https://www.instagram.com/p/DgCLG_nHTa9/",
+   "caption": "PUTRIKA'S WEBSITE IS NOW LIVE! 🌻🌼🪻🏵️💮🌸🪷🌷🌺🌹",
+   "date": "2026-11-22",
+   "type": "carousel_album",
+   "image": "ig/media/17966446635246893.jpg"
+  },
   {
    "id": "17887462218691428",
    "url": "https://www.instagram.com/p/DgAKCj-HcAV/",
@@ -90,18 +98,20 @@
    "date": "2026-04-10",
    "type": "carousel_album",
    "image": "ig/media/18094320770332263.jpg"
-  },
-  {
-   "id": "18009741119654176",
-   "url": "https://www.instagram.com/reel/DSi6d64E2tV/",
-   "caption": "'Tea and Honey' live last Friday alwaysapleasure.club",
-   "date": "2025-12-22",
-   "type": "video",
-   "image": "ig/media/18009741119654176.jpg",
-   "video": "ig/media/18009741119654176.mp4"
   }
  ],
  "moments": [
+  {
+   "id": "18112147046628723",
+   "url": "https://www.instagram.com/p/DgCLG_nHTa9/",
+   "caption": "PUTRIKA'S WEBSITE IS NOW LIVE! 🌻🌼🪻🏵️💮🌸🪷🌷🌺🌹",
+   "date": "2026-11-22",
+   "type": "carousel_album",
+   "image": "ig/media/17966446635246893.jpg",
+   "poster": "ig/media/17966446635246893.jpg",
+   "video": "ig/media/18097339658690733.mp4",
+   "videoThumb": "ig/media/18097339658690733_t.jpg"
+  },
   {
    "id": "18027288431928210",
    "url": "https://www.instagram.com/p/Df2D25-FAcj/",
